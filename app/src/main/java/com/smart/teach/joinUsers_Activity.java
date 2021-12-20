@@ -2,6 +2,7 @@ package com.smart.teach;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -23,6 +24,8 @@ public class joinUsers_Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(joinUsers_Activity.this, "Student login", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(joinUsers_Activity.this,student_login.class);
+                startActivity(intent);
             }
         });
 
