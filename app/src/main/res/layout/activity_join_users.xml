@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".joinUsers_Activity">
+
+<ImageView
+    android:id="@+id/logo1"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:src="@drawable/ic_baseline_image_24"
+    android:layout_marginBottom="50dp"
+    >
+</ImageView>
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Login as ❤️ "
+    android:padding="15dp"
+    android:textStyle="bold"
+    android:fontFamily="sans-serif-condensed-medium"
+    android:gravity="center"
+    android:textSize="25dp"
+    android:textColor="#000"
+    >
+
+</TextView>
+
+  <com.google.android.material.button.MaterialButton
+      android:id="@+id/student"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_margin="5dp"
+      android:drawableLeft="@drawable/ic_baseline_supervisor_account_24"
+      android:outlineProvider="background"
+      android:padding="10dp"
+      android:layout_gravity="center_horizontal"
+      android:text="Student"
+      android:textStyle="bold">
+
+  </com.google.android.material.button.MaterialButton>
+
+  <com.google.android.material.button.MaterialButton
+        android:id="@+id/teacher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:padding="10dp"
+      android:layout_gravity="center_horizontal"
+      android:drawableLeft="@drawable/ic_baseline_school_24"
+        android:layout_margin="5dp"
+        android:text="Teacher">
+
+    </com.google.android.material.button.MaterialButton>
+
+
+
+
+</LinearLayout>

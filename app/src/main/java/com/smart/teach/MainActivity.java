@@ -2,20 +2,28 @@ package com.smart.teach;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-
+    Button button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toast.makeText(this, "hello", Toast.LENGTH_SHORT).show();
-        // Hello World
-        System.out.printf("HEllo world 2");
-        System.out.printf("Hello Abhishek");
-        //shubham
-        Toast.makeText(this, "hello", Toast.LENGTH_SHORT).show();
+
+        Button button =(Button)findViewById(R.id.useractivity);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,joinUsers_Activity.class);
+                startActivity(intent);
+
+            }
+        });
+
     }
 }
