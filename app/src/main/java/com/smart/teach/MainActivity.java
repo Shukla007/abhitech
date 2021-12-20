@@ -16,5 +16,6 @@ public class MainActivity extends AppCompatActivity {
         System.out.printf("HEllo world 2");
         System.out.printf("Hello Abhishek");
         //shubham
+        Toast.makeText(this, "hello", Toast.LENGTH_SHORT).show();
     }
 }
