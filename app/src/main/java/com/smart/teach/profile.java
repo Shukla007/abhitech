@@ -24,27 +24,28 @@ import com.google.android.gms.common.api.Status;
 
 public class profile extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
     Button logoutBtn;
-    TextView userName,userEmail;
+    TextView userName, userEmail;
     ImageView profileImage;
     private GoogleApiClient googleApiClient;
     private GoogleSignInOptions gso;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-        logoutBtn=(Button)findViewById(R.id.sign_out);
-        userName=(TextView)findViewById(R.id.name);
-        userEmail=(TextView)findViewById(R.id.email);
-        profileImage=(ImageView)findViewById(R.id.profile);
+        logoutBtn = (Button) findViewById(R.id.sign_out);
+        userName = (TextView) findViewById(R.id.name);
+        userEmail = (TextView) findViewById(R.id.email);
+        profileImage = (ImageView) findViewById(R.id.profile);
 
-        gso =  new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+        gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
                 .build();
 
-        googleApiClient=new GoogleApiClient.Builder(this)
-                .enableAutoManage(this,this)
-                .addApi(Auth.GOOGLE_SIGN_IN_API,gso)
+        googleApiClient = new GoogleApiClient.Builder(this)
+                .enableAutoManage(this, this)
+                .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
                 .build();
 
         logoutBtn.setOnClickListener(new View.OnClickListener() {
@@ -54,25 +55,26 @@ public class profile extends AppCompatActivity implements GoogleApiClient.OnConn
                         new ResultCallback<Status>() {
                             @Override
                             public void onResult(Status status) {
-                                if (status.isSuccess()){
+                                if (status.isSuccess()) {
                                     gotoMainActivity();
-                                }else{
-                                    Toast.makeText(getApplicationContext(),"Session not close",Toast.LENGTH_LONG).show();
+                                } else {
+                                    Toast.makeText(getApplicationContext(), "Session not close", Toast.LENGTH_LONG).show();
                                 }
                             }
-        });
+                        });
             }
         });
 
     }
+
     @Override
     protected void onStart() {
         super.onStart();
-        OptionalPendingResult<GoogleSignInResult> opr= Auth.GoogleSignInApi.silentSignIn(googleApiClient);
-        if(opr.isDone()){
-            GoogleSignInResult result=opr.get();
+        OptionalPendingResult<GoogleSignInResult> opr = Auth.GoogleSignInApi.silentSignIn(googleApiClient);
+        if (opr.isDone()) {
+            GoogleSignInResult result = opr.get();
             handleSignInResult(result);
-        }else{
+        } else {
             opr.setResultCallback(new ResultCallback<GoogleSignInResult>() {
                 @Override
                 public void onResult(@NonNull GoogleSignInResult googleSignInResult) {
@@ -81,23 +83,25 @@ public class profile extends AppCompatActivity implements GoogleApiClient.OnConn
             });
         }
     }
-    private void handleSignInResult(GoogleSignInResult result){
-        if(result.isSuccess()){
-            GoogleSignInAccount account=result.getSignInAccount();
+
+    private void handleSignInResult(GoogleSignInResult result) {
+        if (result.isSuccess()) {
+            GoogleSignInAccount account = result.getSignInAccount();
             userName.setText(account.getDisplayName());
             userEmail.setText(account.getEmail());
-            try{
+            try {
                 Glide.with(this).load(account.getPhotoUrl()).into(profileImage);
-            }catch (NullPointerException e){
-                Toast.makeText(getApplicationContext(),"image not found",Toast.LENGTH_LONG).show();
+            } catch (NullPointerException e) {
+                Toast.makeText(getApplicationContext(), "image not found", Toast.LENGTH_LONG).show();
             }
 
-        }else{
+        } else {
             gotoMainActivity();
         }
     }
-    private void gotoMainActivity(){
-        Intent intent=new Intent(this,MainActivity.class);
+
+    private void gotoMainActivity() {
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 
