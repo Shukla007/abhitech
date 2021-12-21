@@ -5,46 +5,61 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:layout_margin="8dp"
     tools:context=".student_login">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottie_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="79157-login.json"
+        app:lottie_loop="true"
+        app:lottie_speed="1"></com.airbnb.lottie.LottieAnimationView>
+
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/login_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/lottie_main"
+        android:layout_margin="20dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:text="Login.."
         android:textSize="25dp"
-        android:layout_margin="8dp"
         android:textStyle="bold">
+
     </com.google.android.material.textview.MaterialTextView>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/id"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/login_text"
-        android:layout_marginBottom="15dp"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        app:startIconDrawable="@drawable/ic_baseline_supervisor_account_24"
-        android:hint="Email ID">
+        android:layout_margin="20dp"
+        android:hint="Email ID"
+        app:startIconDrawable="@drawable/ic_baseline_supervisor_account_24">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
-
             />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/pass"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:startIconDrawable="@drawable/ic_baseline_security_24"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_below="@id/id"
-        android:hint="Password">
+        android:layout_margin="20dp"
+        android:hint="Password"
+        app:startIconDrawable="@drawable/ic_baseline_security_24">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -87,9 +102,8 @@
         android:id="@+id/google_signIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_below="@id/link_text">
+        android:layout_below="@id/link_text"
+        android:layout_centerInParent="true">
 
     </com.google.android.gms.common.SignInButton>
-
 </RelativeLayout>
