@@ -12,72 +12,36 @@
         android:id="@+id/login_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login"
+        android:text="Login.."
         android:textSize="25dp"
         android:layout_margin="8dp"
         android:textStyle="bold">
     </com.google.android.material.textview.MaterialTextView>
 
-    <!---<LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_below="@+id/login_text">
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:layout_width="match_parent"
-        android:id="@+id/login_id"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:hint="Emial Id / Id"
-        android:layout_marginBottom="10dp">
-
-    </com.google.android.material.textfield.TextInputEditText>
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:id="@+id/pass"
-            android:layout_height="wrap_content"
-            android:layout_margin="2dp"
-            android:padding="10dp"
-            android:layout_marginBottom="10dp"
-            android:hint="Password">
-        </com.google.android.material.textfield.TextInputEditText>
-
-        <com.google.android.material.button.MaterialButton
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/btn_login"
-            android:padding="5dp"
-            android:layout_margin="2dp"
-            android:text="login">
-
-        </com.google.android.material.button.MaterialButton>
-    </LinearLayout>-->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/login_text"
         android:layout_marginBottom="15dp"
-        app:boxStrokeColor="@color/design_default_color_on_primary"
-        app:boxStrokeWidth="3dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         app:startIconDrawable="@drawable/ic_baseline_supervisor_account_24"
         android:hint="Email ID">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
+
             />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/pass"
-        app:boxStrokeColor="@color/design_default_color_on_primary"
-        app:boxStrokeWidth="3dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:startIconDrawable="@drawable/ic_baseline_security_24"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_below="@id/id"
         android:hint="Password">
 
@@ -90,16 +54,30 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/login_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
-        android:padding="10dp"
-        android:layout_centerVertical="true"
-        android:drawableLeft="@drawable/ic_baseline_login_24"
         android:layout_below="@+id/pass"
+        android:layout_centerInParent="true"
+        android:drawableEnd="@drawable/ic_baseline_login_24"
+        android:padding="10dp"
         android:text="Login">
 
     </com.google.android.material.button.MaterialButton>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/register_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/login_btn"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="Not a user Register here"
+        android:textColor="#06a"
+        android:textSize="10dp"></com.google.android.material.textview.MaterialTextView>
 
 </RelativeLayout>
