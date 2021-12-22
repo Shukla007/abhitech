@@ -32,20 +32,30 @@ public class MainActivity extends AppCompatActivity {
      DrawerLayout drawer;
     ActionBarDrawerToggle toggle;
     NavigationView navigationView;
+    ImageView imageView;
+    TextView textView;
     @SuppressLint("RestrictedApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        imageView=findViewById(R.id.menu_clicked);
         drawer = findViewById(R.id.drawer);
-loadFragment(new Home());
+        loadFragment(new Home());
+         textView=findViewById(R.id.tv);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.open, R.string.close);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        toggle = new ActionBarDrawerToggle(this, drawer,toolbar, R.string.open, R.string.close);
         navigationView = findViewById(R.id.nav_view);
         toggle.setDrawerIndicatorEnabled(true);//enable hamburger sign
         drawer.addDrawerListener(toggle);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                drawer.openDrawer(GravityCompat.START);
+            }
+        });
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -96,8 +106,13 @@ loadFragment(new Home());
         FragmentManager fm = getFragmentManager();
         FragmentTransaction fragmentTransaction = fm.beginTransaction();
         fragmentTransaction.replace(R.id.fragment_container, fragment);
-        fragmentTransaction.addToBackStack(null).commit();
+        fragmentTransaction.commit();
 
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        drawer.closeDrawer(GravityCompat.START);
+    }
 }

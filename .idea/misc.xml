@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/Users/RCC/AndroidStudioProjects/abhitech/app/src/main/res/layout/activity_join_users.xml" value="0.18" />
         <entry key="..\:/Users/RCC/AndroidStudioProjects/abhitech/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
+<<<<<<< Updated upstream
         <entry key="..\:/Users/RCC/AndroidStudioProjects/abhitech/app/src/main/res/layout/activity_profile.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/RCC/AndroidStudioProjects/abhitech/app/src/main/res/layout/activity_student_login.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/RCC/AndroidStudioProjects/abhitech/app/src/main/res/layout/activity_teacher_login.xml" value="0.20416666666666666" />
@@ -16,6 +17,11 @@
         <entry key="..\:/Users/RCC/AndroidStudioProjects/abhitech/app/src/main/res/menu/bottom_menu.xml" value="0.1" />
         <entry key="..\:/Users/RCC/AndroidStudioProjects/abhitech/app/src/main/res/menu/menu_bar.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/RCC/AndroidStudioProjects/abhitech/app/src/main/res/menu/menu_navigation.xml" value="0.16018518518518518" />
+=======
+        <entry key="..\:/Users/RCC/AndroidStudioProjects/abhitech/app/src/main/res/layout/activity_student_login.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/RCC/AndroidStudioProjects/abhitech/app/src/main/res/layout/activity_teacher_login.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/RCC/AndroidStudioProjects/abhitech/app/src/main/res/menu/bottom_menu.xml" value="0.1" />
+>>>>>>> Stashed changes
         <entry key="..\:/Users/RCC/AndroidStudioProjects/abhitech/app/src/main/res/menu/navbar_menu.xml" value="0.1" />
       </map>
     </option>
