@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
         navigationView = findViewById(R.id.nav_view);
         toggle.setDrawerIndicatorEnabled(true);//enable hamburger sign
         drawer.addDrawerListener(toggle);
+        //menubar
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
