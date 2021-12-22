@@ -7,7 +7,7 @@
     <item
         android:id="@+id/search_btnD"
         android:icon="@drawable/search"
-        android:title="Serach" />
+        android:title="Search" />
     <item
         android:id="@+id/notification_btnD"
         android:icon="@drawable/notification"

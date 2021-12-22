@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".student_login">
 
-    <com.airbnb.lottie.LottieAnimationView
+  <!--  <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/lottie_main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -16,14 +16,15 @@
         app:lottie_autoPlay="true"
         app:lottie_fileName="79157-login.json"
         app:lottie_loop="true"
-        app:lottie_speed="1"></com.airbnb.lottie.LottieAnimationView>
+        app:lottie_speed="1">
+
+    </com.airbnb.lottie.LottieAnimationView>-->
 
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/login_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/lottie_main"
         android:layout_margin="20dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
@@ -47,7 +48,8 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:id="@+id/login_email"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -64,15 +66,28 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
+            android:id="@+id/login_pass"
 
             />
     </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/forgot_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pass"
+        android:layout_marginLeft="20dp"
+        android:text="Forgot Password ?"
+        android:textColor="#03a"
+        android:textSize="13dp">
+
+    </TextView>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/login_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/pass"
+        android:layout_below="@+id/forgot"
         android:layout_centerInParent="true"
         android:drawableEnd="@drawable/ic_baseline_login_24"
         android:padding="10dp"
@@ -91,8 +106,24 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:fontFamily="sans-serif-condensed-medium"
-        android:text="Not a user Register here"
+        android:text="Not a user Register here.."
         android:textColor="#06a"
+        android:textSize="15dp">
+
+    </TextView>
+    <TextView
+        android:id="@+id/or"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/link_text"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="OR"
+        android:textColor="#000"
         android:textSize="10dp">
 
     </TextView>
@@ -101,7 +132,7 @@
         android:id="@+id/google_signIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/link_text"
+        android:layout_below="@id/or"
         android:layout_centerInParent="true">
 
     </com.google.android.gms.common.SignInButton>

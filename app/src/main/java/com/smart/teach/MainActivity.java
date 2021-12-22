@@ -29,24 +29,25 @@ import com.smart.teach.Fragment.Home;
 public class MainActivity extends AppCompatActivity {
     Button button;
     BottomNavigationView bottom_navigation;
-     DrawerLayout drawer;
+    DrawerLayout drawer;
     ActionBarDrawerToggle toggle;
     NavigationView navigationView;
     ImageView imageView;
     TextView textView;
+
     @SuppressLint("RestrictedApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        imageView=findViewById(R.id.menu_clicked);
+        imageView = findViewById(R.id.menu_clicked);
         drawer = findViewById(R.id.drawer);
         loadFragment(new Home());
-         textView=findViewById(R.id.tv);
+        textView = findViewById(R.id.tv);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
-        toggle = new ActionBarDrawerToggle(this, drawer,toolbar, R.string.open, R.string.close);
+        toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.open, R.string.close);
         navigationView = findViewById(R.id.nav_view);
         toggle.setDrawerIndicatorEnabled(true);//enable hamburger sign
         drawer.addDrawerListener(toggle);
@@ -62,17 +63,15 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.home_btnD:
-                         Toast.makeText(getApplicationContext(),"Home Panel is Open",Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Home Panel is Open", Toast.LENGTH_LONG).show();
                         drawer.closeDrawer(GravityCompat.START);
 
                         break;
 
 
                     case R.id.notification_btn:
-                         Toast.makeText(getApplicationContext(),"Setting Panel is Open",Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Setting Panel is Open", Toast.LENGTH_LONG).show();
                         drawer.closeDrawer(GravityCompat.START);
-
-
 
 
                 }
@@ -82,27 +81,26 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        //  User activity intents
 
-      //  User activity intents
+        //  Bottom Navigation
+        bottom_navigation = findViewById(R.id.bottom_navigation);
+        bottom_navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-              //  Bottom Navigation
-                bottom_navigation = findViewById(R.id.bottom_navigation);
-                bottom_navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-                    @Override
-                    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
-                        switch (item.getItemId()) {
-                            case R.id.home_btn:
-                                loadFragment(new Home());
-                                Toast.makeText(MainActivity.this, "Home Clicked", Toast.LENGTH_SHORT).show();
-                        }
-                        return true;
-                    }
-                });
-
+                switch (item.getItemId()) {
+                    case R.id.home_btn:
+                        loadFragment(new Home());
+                        Toast.makeText(MainActivity.this, "Home Clicked", Toast.LENGTH_SHORT).show();
+                }
+                return true;
+            }
+        });
 
 
-              }
+    }
+
     private void loadFragment(Fragment fragment) {
         FragmentManager fm = getFragmentManager();
         FragmentTransaction fragmentTransaction = fm.beginTransaction();

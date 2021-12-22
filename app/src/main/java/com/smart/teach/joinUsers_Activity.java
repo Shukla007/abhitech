@@ -16,24 +16,26 @@ public class joinUsers_Activity extends AppCompatActivity {
         setContentView(R.layout.activity_join_users);
 
 
-        Button student =(Button) findViewById(R.id.student);
-        Button teacher =(Button) findViewById(R.id.teacher);
+        Button student = (Button) findViewById(R.id.login);
+        Button teacher = (Button) findViewById(R.id.register);
 
-        //Student Login Button
+        // Login Button
         student.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(joinUsers_Activity.this, "Student login", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(joinUsers_Activity.this,student_login.class);
+                Intent intent = new Intent(joinUsers_Activity.this, student_login.class);
                 startActivity(intent);
             }
         });
 
-        //Teacher login Button/
+        // Register Button/
         teacher.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(joinUsers_Activity.this, "Teacher login", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(joinUsers_Activity.this, register_student.class);
+                startActivity(intent);
             }
         });
     }

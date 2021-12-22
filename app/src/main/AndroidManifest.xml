@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.smart.teach" >
+    package="com.smart.teach">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -10,7 +10,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Teach" >
+        android:theme="@style/Theme.Teach">
+        <activity
+            android:name=".forgot"
+            android:exported="false" />
         <activity
             android:name=".bottomnavigation"
             android:exported="false"
@@ -22,9 +25,6 @@
             android:name=".profile"
             android:exported="false" />
         <activity
-            android:name=".teacher_login"
-            android:exported="false" />
-        <activity
             android:name=".student_login"
             android:exported="false" />
         <activity
@@ -32,7 +32,7 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
