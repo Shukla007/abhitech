@@ -28,10 +28,12 @@ import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.android.material.navigation.NavigationView;
+import com.onesignal.OneSignal;
 import com.smart.teach.Fragment.Home;
 import com.smart.teach.Fragment.HomeH;
 
 public class MainActivity extends AppCompatActivity {
+    private static final String ONESIGNAL_APP_ID = "78227aaf-c889-4b2f-80e3-dd0ede27e2ff";
     Button button;
     BottomNavigationView bottom_navigation;
     DrawerLayout drawer;
@@ -39,19 +41,31 @@ public class MainActivity extends AppCompatActivity {
     SharedPreferences preferences;
     SharedPreferences.Editor editor;
     NavigationView navigationView;
-    ImageView imageView,profileImage;
-    TextView textView,userName,userEmail;
+    ImageView imageView, profileImage;
+    TextView textView, userName, userEmail;
 
     @SuppressLint("RestrictedApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Enable verbose OneSignal logging to debug issues if needed.
+        OneSignal.setLogLevel(OneSignal.LOG_LEVEL.VERBOSE, OneSignal.LOG_LEVEL.NONE);
+
+        // OneSignal Initialization
+        OneSignal.initWithContext(this);
+        OneSignal.setAppId(ONESIGNAL_APP_ID);
+
+
         imageView = findViewById(R.id.menu_clicked);
         drawer = findViewById(R.id.drawer);
         preferences=getApplicationContext().getSharedPreferences("myPref",0);
         editor=preferences.edit();
         loadFragment(new HomeH());
+        preferences = getApplicationContext().getSharedPreferences("myPref", 0);
+        editor = preferences.edit();
+        loadFragment(new Home());
         textView = findViewById(R.id.tv);
         userName = (TextView) findViewById(R.id.tv1);
         userEmail = (TextView) findViewById(R.id.tv2);
@@ -121,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
             userName.setText(userNmaee);
             userEmail.setText(userEmaill);
             Glide.with(this).load(profilee).into(profileImage);
-        }catch (Exception e){
+        } catch (Exception e) {
             Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
         }
 

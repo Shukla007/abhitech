@@ -72,13 +72,43 @@
             />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.button.MaterialButton
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="register"
+        android:id="@+id/radio_layout"
         android:layout_below="@id/password"
+        android:orientation="horizontal">
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/student_select"
+            android:layout_width="0dp"
+            android:clickable="true"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/password"
+            android:layout_weight="1"
+            android:text="Student">
+
+        </com.google.android.material.checkbox.MaterialCheckBox>
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/Teacher_select"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:layout_below="@id/password"
+        android:text="Teacher">
+
+    </com.google.android.material.checkbox.MaterialCheckBox>
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/register_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/radio_layout"
         android:padding="10dp"
-        android:id="@+id/register_btn">
+        android:text="register">
 
     </com.google.android.material.button.MaterialButton>
 </RelativeLayout>
