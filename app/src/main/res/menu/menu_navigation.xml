@@ -10,11 +10,12 @@
         android:icon="@drawable/search"
         android:title="Serach" />
     <item
-        android:id="@+id/notification_btn"
-        android:icon="@drawable/notification"
-        android:title="Notification" />
+        android:id="@+id/Course_btn"
+        android:icon="@drawable/course"
+        android:title="Course" />
     <item
         android:id="@+id/profile_btn"
         android:icon="@drawable/profile"
         android:title="Profile" />
+
 </menu>

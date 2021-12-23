@@ -12,6 +12,7 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -21,6 +22,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 //import com.bumptech.glide.Glide;
+import com.bumptech.glide.Glide;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.android.material.navigation.NavigationView;
@@ -31,9 +35,11 @@ public class MainActivity extends AppCompatActivity {
     BottomNavigationView bottom_navigation;
     DrawerLayout drawer;
     ActionBarDrawerToggle toggle;
+    SharedPreferences preferences;
+    SharedPreferences.Editor editor;
     NavigationView navigationView;
-    ImageView imageView;
-    TextView textView;
+    ImageView imageView,profileImage;
+    TextView textView,userName,userEmail;
 
     @SuppressLint("RestrictedApi")
     @Override
@@ -42,8 +48,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         imageView = findViewById(R.id.menu_clicked);
         drawer = findViewById(R.id.drawer);
+        preferences=getApplicationContext().getSharedPreferences("myPref",0);
+        editor=preferences.edit();
         loadFragment(new Home());
         textView = findViewById(R.id.tv);
+        userName = (TextView) findViewById(R.id.tv1);
+        userEmail = (TextView) findViewById(R.id.tv2);
+        profileImage = (ImageView) findViewById(R.id.profileD);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
@@ -69,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
 
 
-                    case R.id.notification_btn:
+                    case R.id.Course_btn:
                         Toast.makeText(getApplicationContext(), "Setting Panel is Open", Toast.LENGTH_LONG).show();
                         drawer.closeDrawer(GravityCompat.START);
 
@@ -97,7 +108,16 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
-
+        String userNmaee = preferences.getString("userName", "");
+        String userEmaill = preferences.getString("userEmail", "");
+        String profilee = preferences.getString("profile", "");
+        try {
+            userName.setText(userNmaee);
+            userEmail.setText(userEmaill);
+            Glide.with(this).load(profilee).into(profileImage);
+        }catch (Exception e){
+            Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
 
     }
 
@@ -114,4 +134,5 @@ public class MainActivity extends AppCompatActivity {
         super.onBackPressed();
         drawer.closeDrawer(GravityCompat.START);
     }
+
 }

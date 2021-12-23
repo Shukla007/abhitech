@@ -19,33 +19,49 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_weight="0.5"
             android:gravity="center"
             tools:ignore="Suspicious0dp">
 
-<!--            <TextView-->
-<!--                android:id="@+id/diskUsage"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="@string/app_name"-->
-<!--                android:textAppearance="@style/TextAppearance.AppCompat.Body1"-->
-<!--                android:textSize="30dp"-->
-<!--                android:textStyle="bold" />-->
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/profileD"
+                style="@style/Widget.MaterialComponents.TimePicker.ImageButton"
+                android:layout_width="75dp"
+                android:layout_height="70dp"
+                android:layout_centerHorizontal="true"
 
+                android:src="@drawable/ic_baseline_image_24">
+
+            </com.google.android.material.imageview.ShapeableImageView>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
+                android:layout_weight="1.5"
+                 android:gravity="center"
+                android:orientation="vertical"
                 tools:ignore="Suspicious0dp">
-                <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    app:srcCompat="@drawable/home" />
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:id="@+id/tv1"
+                    android:text="Shubham Kumar"
+                    android:textSize="16dp"
+                    android:textColor="#111"
+
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:id="@+id/tv2"
+                    android:layout_marginTop="2dp"
+                    android:maxLines="1"
+                    android:text="shubhamkumarthakur61@gmail.com"
+                    android:textSize="16dp"
+                    android:textColor="#111"
+
+                    android:layout_height="wrap_content"/>
             </LinearLayout>
 
 

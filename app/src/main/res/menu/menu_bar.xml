@@ -5,15 +5,28 @@
         android:icon="@drawable/home"
         android:title="Home" />
     <item
+        android:id="@+id/profile_btnD"
+        android:icon="@drawable/profile"
+        android:title="Profile" />
+    <item
+        android:id="@+id/transaction_btnD"
+        android:icon="@drawable/transaction"
+        android:title="Transaction" />
+    <item
         android:id="@+id/search_btnD"
         android:icon="@drawable/search"
         android:title="Search" />
     <item
-        android:id="@+id/notification_btnD"
-        android:icon="@drawable/notification"
-        android:title="Notification" />
-    <item
-        android:id="@+id/profile_btnD"
-        android:icon="@drawable/profile"
-        android:title="Profile" />
+        android:id="@+id/Course_btnD"
+        android:icon="@drawable/course"
+        android:title="Course" />
+
+    <group
+        android:id="@+id/group1"
+        >
+        <item android:title="Logout"
+            android:orderInCategory="1"
+            android:icon="@drawable/logout"
+            android:id="@+id/profile"/>
+    </group>
 </menu>

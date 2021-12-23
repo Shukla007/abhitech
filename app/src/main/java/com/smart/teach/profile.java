@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -26,6 +27,8 @@ public class profile extends AppCompatActivity implements GoogleApiClient.OnConn
     Button logoutBtn;
     TextView userName, userEmail;
     ImageView profileImage;
+    SharedPreferences preferences;
+    SharedPreferences.Editor editor;
     private GoogleApiClient googleApiClient;
     private GoogleSignInOptions gso;
 
@@ -33,7 +36,8 @@ public class profile extends AppCompatActivity implements GoogleApiClient.OnConn
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
-
+        preferences=getApplicationContext().getSharedPreferences("myPref",0);
+        editor=preferences.edit();
         logoutBtn = (Button) findViewById(R.id.sign_out);
         userName = (TextView) findViewById(R.id.name);
         userEmail = (TextView) findViewById(R.id.email);
@@ -89,8 +93,11 @@ public class profile extends AppCompatActivity implements GoogleApiClient.OnConn
             GoogleSignInAccount account = result.getSignInAccount();
             userName.setText(account.getDisplayName());
             userEmail.setText(account.getEmail());
+            editor.putString("userName",account.getDisplayName()).commit();
+            editor.putString("userEmail",account.getEmail()).commit();
             try {
                 Glide.with(this).load(account.getPhotoUrl()).into(profileImage);
+                editor.putString("profile", String.valueOf(account.getPhotoUrl())).commit();
             } catch (NullPointerException e) {
                 Toast.makeText(getApplicationContext(), "image not found", Toast.LENGTH_LONG).show();
             }
