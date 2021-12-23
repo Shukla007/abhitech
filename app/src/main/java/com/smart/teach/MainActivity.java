@@ -29,6 +29,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.android.material.navigation.NavigationView;
 import com.smart.teach.Fragment.Home;
+import com.smart.teach.Fragment.HomeH;
 
 public class MainActivity extends AppCompatActivity {
     Button button;
@@ -50,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         drawer = findViewById(R.id.drawer);
         preferences=getApplicationContext().getSharedPreferences("myPref",0);
         editor=preferences.edit();
-        loadFragment(new Home());
+        loadFragment(new HomeH());
         textView = findViewById(R.id.tv);
         userName = (TextView) findViewById(R.id.tv1);
         userEmail = (TextView) findViewById(R.id.tv2);
@@ -102,9 +103,14 @@ public class MainActivity extends AppCompatActivity {
 
                 switch (item.getItemId()) {
                     case R.id.home_btn:
+                        loadFragment(new HomeH());
+                        break;
+                    case R.id.profile_btn:
                         loadFragment(new Home());
-                        Toast.makeText(MainActivity.this, "Home Clicked", Toast.LENGTH_SHORT).show();
+
+                        break;
                 }
+
                 return true;
             }
         });
