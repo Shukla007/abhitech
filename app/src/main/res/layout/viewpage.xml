@@ -3,9 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
+
 <ImageView
     android:layout_width="match_parent"
     android:id="@+id/imagepage"
+    
+    android:src="@drawable/page1"
     android:layout_height="200dp"/>
 
 </RelativeLayout>

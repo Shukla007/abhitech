@@ -17,7 +17,7 @@ import com.smart.teach.R;
 
 public class ViewPagerAdapter extends PagerAdapter {
 
-    private int[] images = {R.drawable.course, R.drawable.home, R.drawable.transaction};
+    private int[] images = {R.drawable.page1, R.drawable.page2, R.drawable.page3};
     private Context ctx;
     private LayoutInflater pagerLayoutInflater;
     View splashView;

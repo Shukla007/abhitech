@@ -62,7 +62,6 @@ public class MainActivity extends AppCompatActivity {
         loadFragment(new HomeH());
         preferences = getApplicationContext().getSharedPreferences("myPref", 0);
         editor = preferences.edit();
-        loadFragment(new Home());
         textView = findViewById(R.id.tv);
         userName = (TextView) findViewById(R.id.tv1);
         userEmail = (TextView) findViewById(R.id.tv2);
