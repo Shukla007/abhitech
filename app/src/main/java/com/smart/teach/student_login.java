@@ -50,11 +50,11 @@ public class student_login extends AppCompatActivity implements GoogleApiClient.
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
-/*        if (user != null) {
+       if (user != null) {
             Intent intent = new Intent(student_login.this, MainActivity.class);
             startActivity(intent);
             finish();
-        }*/
+        }
 
         TextView button = (TextView) findViewById(R.id.link_text);
         login_email = findViewById(R.id.login_email);
@@ -86,9 +86,9 @@ public class student_login extends AppCompatActivity implements GoogleApiClient.
                             if (task.isSuccessful()) {
                                 Toast.makeText(student_login.this, "Logged In", Toast.LENGTH_SHORT).show();
                                 FirebaseUser user = auth.getCurrentUser();
-                                checkUsers(auth.getCurrentUser().getUid());
-                               /* Intent intent = new Intent(student_login.this, MainActivity.class);
-                                startActivity(intent);*/
+                               // checkUsers(auth.getCurrentUser().getUid());
+                                Intent intent = new Intent(student_login.this, MainActivity.class);
+                                startActivity(intent);
                             } else {
                                 Toast.makeText(student_login.this, "Authentication Failed", Toast.LENGTH_SHORT).show();
                             }
@@ -128,7 +128,7 @@ public class student_login extends AppCompatActivity implements GoogleApiClient.
 
     }
 
-    private void checkUsers(String uid) {
+   /* private void checkUsers(String uid) {
         DocumentReference df = fStore.collection("Users").document(uid);
         //extract data from document
 
@@ -149,7 +149,7 @@ public class student_login extends AppCompatActivity implements GoogleApiClient.
 
             }
         });
-    }
+    }*/
 
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
