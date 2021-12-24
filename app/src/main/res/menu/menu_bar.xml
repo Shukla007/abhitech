@@ -27,6 +27,6 @@
         <item android:title="Logout"
             android:orderInCategory="1"
             android:icon="@drawable/logout"
-            android:id="@+id/profile"/>
+            android:id="@+id/log_out"/>
     </group>
 </menu>

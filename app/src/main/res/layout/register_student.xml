@@ -8,45 +8,46 @@
     tools:context=".register_student">
 
     <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/register_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/register_text"
-        android:textSize="20dp"
-        android:textColor="#000"
         android:padding="10dp"
-        android:text="Register..">
+        android:text="Register.."
+        android:textColor="#000"
+        android:textSize="20dp">
 
     </com.google.android.material.textview.MaterialTextView>
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/email_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/register_text"
         android:layout_marginBottom="15dp"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        app:startIconDrawable="@android:drawable/sym_action_email"
-        android:hint="Email ID">
+        android:hint="Email ID"
+        app:startIconDrawable="@android:drawable/sym_action_email">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:id="@+id/email"
-            />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/name_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/email_layout"
         android:layout_marginBottom="15dp"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        app:startIconDrawable="@drawable/ic_baseline_supervisor_account_24"
-        android:hint="Name">
+        android:hint="Name"
+        app:startIconDrawable="@drawable/ic_baseline_supervisor_account_24">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/name"
 
 
             />
@@ -54,52 +55,52 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/password"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/name_layout"
         android:layout_marginBottom="15dp"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        app:startIconDrawable="@android:drawable/ic_lock_lock"
-        android:hint="Password">
+        android:hint="Password"
+        app:startIconDrawable="@android:drawable/ic_lock_lock">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/pass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
-            android:id="@+id/pass"
 
 
             />
     </com.google.android.material.textfield.TextInputLayout>
 
     <LinearLayout
+        android:id="@+id/radio_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/radio_layout"
         android:layout_below="@id/password"
         android:orientation="horizontal">
 
         <com.google.android.material.checkbox.MaterialCheckBox
-            android:id="@+id/student_select"
+            android:id="@+id/isStudent"
             android:layout_width="0dp"
-            android:clickable="true"
             android:layout_height="wrap_content"
             android:layout_below="@id/password"
             android:layout_weight="1"
+            android:clickable="true"
             android:text="Student">
 
         </com.google.android.material.checkbox.MaterialCheckBox>
 
-    <com.google.android.material.checkbox.MaterialCheckBox
-        android:id="@+id/Teacher_select"
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        android:layout_below="@id/password"
-        android:text="Teacher">
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/isTeacher"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/password"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:text="Teacher">
 
-    </com.google.android.material.checkbox.MaterialCheckBox>
+        </com.google.android.material.checkbox.MaterialCheckBox>
     </LinearLayout>
 
     <com.google.android.material.button.MaterialButton

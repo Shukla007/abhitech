@@ -8,8 +8,7 @@
     android:gravity="bottom"
     android:orientation="vertical"
 
-    android:theme="@style/ThemeOverlay.AppCompat.Dark"
-    >
+    android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -33,41 +32,39 @@
                 android:src="@drawable/ic_baseline_image_24">
 
             </com.google.android.material.imageview.ShapeableImageView>
-            </LinearLayout>
+        </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1.5"
-                 android:gravity="center"
-                android:orientation="vertical"
-                tools:ignore="Suspicious0dp">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.5"
+            android:gravity="center"
+            android:orientation="vertical"
+            tools:ignore="Suspicious0dp">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:id="@+id/tv1"
-                    android:text="Shubham Kumar"
-                    android:textSize="16dp"
-                    android:textColor="#111"
+            <TextView
+                android:id="@+id/tv1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Shubham Kumar"
+                android:textColor="#111"
 
-                    android:layout_height="wrap_content"/>
+                android:textSize="16dp" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:id="@+id/tv2"
-                    android:layout_marginTop="2dp"
-                    android:maxLines="1"
-                    android:text="shubhamkumarthakur61@gmail.com"
-                    android:textSize="16dp"
-                    android:textColor="#111"
+            <TextView
+                android:id="@+id/tv2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:maxLines="1"
+                android:text="shubhamkumarthakur61@gmail.com"
+                android:textColor="#111"
 
-                    android:layout_height="wrap_content"/>
-            </LinearLayout>
-
-
+                android:textSize="16dp" />
         </LinearLayout>
 
 
+    </LinearLayout>
 
 
 </RelativeLayout>

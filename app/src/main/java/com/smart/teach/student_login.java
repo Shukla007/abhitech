@@ -19,17 +19,24 @@ import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.smart.teach.MainActivity;
 
 public class student_login extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
     private static final int RC_SIGN_IN = 1;
     SignInButton signInButton;
     Button button, login_btn;
     EditText login_email, login_pass;
+    FirebaseFirestore fStore;
     private GoogleApiClient googleApiClient;
     private FirebaseAuth auth;
 
@@ -39,11 +46,21 @@ public class student_login extends AppCompatActivity implements GoogleApiClient.
         setContentView(R.layout.activity_student_login);
 
         auth = FirebaseAuth.getInstance();
+        fStore = FirebaseFirestore.getInstance();
+
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+/*        if (user != null) {
+            Intent intent = new Intent(student_login.this, MainActivity.class);
+            startActivity(intent);
+            finish();
+        }*/
 
         TextView button = (TextView) findViewById(R.id.link_text);
         login_email = findViewById(R.id.login_email);
         login_pass = findViewById(R.id.login_pass);
         TextView forgot_btn = (TextView) findViewById(R.id.forgot_btn);
+
 
         forgot_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,8 +86,9 @@ public class student_login extends AppCompatActivity implements GoogleApiClient.
                             if (task.isSuccessful()) {
                                 Toast.makeText(student_login.this, "Logged In", Toast.LENGTH_SHORT).show();
                                 FirebaseUser user = auth.getCurrentUser();
-                                Intent intent = new Intent(student_login.this, MainActivity.class);
-                                startActivity(intent);
+                                checkUsers(auth.getCurrentUser().getUid());
+                               /* Intent intent = new Intent(student_login.this, MainActivity.class);
+                                startActivity(intent);*/
                             } else {
                                 Toast.makeText(student_login.this, "Authentication Failed", Toast.LENGTH_SHORT).show();
                             }
@@ -108,6 +126,29 @@ public class student_login extends AppCompatActivity implements GoogleApiClient.
             }
         });
 
+    }
+
+    private void checkUsers(String uid) {
+        DocumentReference df = fStore.collection("Users").document(uid);
+        //extract data from document
+
+        df.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+
+                if (documentSnapshot.getString("isTeacher") != null) {
+                    Intent intent = new Intent(student_login.this, Teacher.class);
+                    startActivity(intent);
+                    finish();
+                }
+                if (documentSnapshot.getString("isStudent") != null) {
+                    Intent intent = new Intent(student_login.this, MainActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
+
+            }
+        });
     }
 
     @Override

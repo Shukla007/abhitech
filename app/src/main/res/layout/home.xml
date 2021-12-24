@@ -14,4 +14,20 @@
         android:textSize="25dp"
         android:textStyle="bold">
     </Button>
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:outlineProvider="background"
+        android:padding="20dp"
+        android:background="#E32424"
+        android:drawableLeft="@drawable/logout"
+        android:text="LOgout"
+        android:layout_below="@id/useractivity"
+        android:layout_centerInParent="true"
+        android:textStyle="bold">
+
+    </Button>
+
 </RelativeLayout>

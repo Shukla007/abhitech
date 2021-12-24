@@ -18,17 +18,17 @@
         app:startIconDrawable="@drawable/ic_baseline_supervisor_account_24">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/email_id"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/email_id"/>
+            android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/reset"
-        android:layout_margin="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/id"
+        android:layout_margin="20dp"
         android:padding="16dp"
         android:text="Reset password">
 

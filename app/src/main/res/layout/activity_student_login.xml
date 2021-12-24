@@ -7,18 +7,18 @@
     android:layout_height="match_parent"
     tools:context=".student_login">
 
-  <!--  <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/lottie_main"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerInParent="true"
-        app:lottie_autoPlay="true"
-        app:lottie_fileName="79157-login.json"
-        app:lottie_loop="true"
-        app:lottie_speed="1">
+    <!--  <com.airbnb.lottie.LottieAnimationView
+          android:id="@+id/lottie_main"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_alignParentTop="true"
+          android:layout_centerInParent="true"
+          app:lottie_autoPlay="true"
+          app:lottie_fileName="79157-login.json"
+          app:lottie_loop="true"
+          app:lottie_speed="1">
 
-    </com.airbnb.lottie.LottieAnimationView>-->
+      </com.airbnb.lottie.LottieAnimationView>-->
 
 
     <com.google.android.material.textview.MaterialTextView
@@ -47,9 +47,9 @@
         app:startIconDrawable="@drawable/ic_baseline_supervisor_account_24">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/login_email"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/login_email"/>
+            android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -63,10 +63,10 @@
         app:startIconDrawable="@drawable/ic_baseline_security_24">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/login_pass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
-            android:id="@+id/login_pass"
 
             />
     </com.google.android.material.textfield.TextInputLayout>
@@ -111,6 +111,7 @@
         android:textSize="15dp">
 
     </TextView>
+
     <TextView
         android:id="@+id/or"
         android:layout_width="wrap_content"

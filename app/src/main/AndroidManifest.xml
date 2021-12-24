@@ -12,12 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Teach">
         <activity
-            android:name=".forgot"
+            android:name=".Teacher"
             android:exported="false" />
         <activity
-            android:name=".bottomnavigation"
-            android:exported="false"
-            android:label="@string/title_activity_bottomnavigation" />
+            android:name=".forgot"
+            android:exported="false" />
         <activity
             android:name=".register_student"
             android:exported="false" />
@@ -26,12 +25,6 @@
             android:exported="false" />
         <activity
             android:name=".student_login"
-            android:exported="false" />
-        <activity
-            android:name=".joinUsers_Activity"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -39,6 +32,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".joinUsers_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
     </application>
 
 </manifest>

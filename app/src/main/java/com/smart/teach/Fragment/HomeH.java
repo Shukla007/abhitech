@@ -18,12 +18,13 @@ public class HomeH extends Fragment {
     ViewPagerAdapter viewPagerAdapter;
     ViewPager viewPager;
     View view;
+
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.homemain, container, false);
-        viewPager =view.findViewById(R.id.viewpager);
+        viewPager = view.findViewById(R.id.viewpager);
         viewPagerAdapter = new ViewPagerAdapter(getActivity());
         viewPager.setAdapter(viewPagerAdapter);
-        ViewPager.OnPageChangeListener viewpager=new ViewPager.OnPageChangeListener() {
+        ViewPager.OnPageChangeListener viewpager = new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 

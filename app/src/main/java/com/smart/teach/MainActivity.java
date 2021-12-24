@@ -4,6 +4,8 @@ import android.annotation.SuppressLint;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.ClipData;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -21,11 +23,22 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.bumptech.glide.Glide;
+import com.google.android.gms.auth.api.Auth;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.ResultCallback;
+import com.google.android.gms.common.api.Status;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.onesignal.OneSignal;
 import com.smart.teach.Fragment.Home;
 import com.smart.teach.Fragment.HomeH;
+import com.smart.teach.profile;
 
 //import com.bumptech.glide.Glide;
 
@@ -40,12 +53,17 @@ public class MainActivity extends AppCompatActivity {
     NavigationView navigationView;
     ImageView imageView, profileImage;
     TextView textView, userName, userEmail;
+    FloatingActionButton fab;
+    private GoogleApiClient googleApiClient;
 
     @SuppressLint("RestrictedApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+        FirebaseFirestore fStore = FirebaseFirestore.getInstance();
 
         // Enable verbose OneSignal logging to debug issues if needed.
         OneSignal.setLogLevel(OneSignal.LOG_LEVEL.VERBOSE, OneSignal.LOG_LEVEL.NONE);
@@ -68,6 +86,11 @@ public class MainActivity extends AppCompatActivity {
         userName = (TextView) findViewById(R.id.tv1);
         userEmail = (TextView) findViewById(R.id.tv2);
         profileImage = (ImageView) findViewById(R.id.profileD);
+        fab = findViewById(R.id.fab_btn);
+
+
+
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
@@ -75,6 +98,8 @@ public class MainActivity extends AppCompatActivity {
         navigationView = findViewById(R.id.nav_view);
         toggle.setDrawerIndicatorEnabled(true);//enable hamburger sign
         drawer.addDrawerListener(toggle);
+
+
         //menubar
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -104,6 +129,7 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
+
 
 
         //  User activity intents
@@ -140,6 +166,8 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
+
     private void loadFragment(Fragment fragment) {
         FragmentManager fm = getFragmentManager();
         FragmentTransaction fragmentTransaction = fm.beginTransaction();
@@ -153,5 +181,7 @@ public class MainActivity extends AppCompatActivity {
         super.onBackPressed();
         drawer.closeDrawer(GravityCompat.START);
     }
+
+
 
 }
