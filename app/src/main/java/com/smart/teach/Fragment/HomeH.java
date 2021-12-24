@@ -18,7 +18,6 @@ public class HomeH extends Fragment {
     ViewPagerAdapter viewPagerAdapter;
     ViewPager viewPager;
     View view;
-
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.homemain, container, false);
         viewPager =view.findViewById(R.id.viewpager);

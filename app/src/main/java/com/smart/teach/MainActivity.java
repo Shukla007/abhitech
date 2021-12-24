@@ -57,11 +57,13 @@ public class MainActivity extends AppCompatActivity {
 
         imageView = findViewById(R.id.menu_clicked);
         drawer = findViewById(R.id.drawer);
-        preferences=getApplicationContext().getSharedPreferences("myPref",0);
-        editor=preferences.edit();
+        preferences = getApplicationContext().getSharedPreferences("myPref", 0);
+        editor = preferences.edit();
         loadFragment(new HomeH());
         preferences = getApplicationContext().getSharedPreferences("myPref", 0);
         editor = preferences.edit();
+
+
         textView = findViewById(R.id.tv);
         userName = (TextView) findViewById(R.id.tv1);
         userEmail = (TextView) findViewById(R.id.tv2);
@@ -94,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.Course_btn:
                         Toast.makeText(getApplicationContext(), "Setting Panel is Open", Toast.LENGTH_LONG).show();
                         drawer.closeDrawer(GravityCompat.START);
+                        break;
 
 
                 }
