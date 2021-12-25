@@ -27,22 +27,21 @@
                 android:layout_marginTop="25dp"
                 android:src="@drawable/ic_baseline_image_24">
 
+
             </com.google.android.material.imageview.ShapeableImageView>
 
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/profile"
-                android:layout_centerHorizontal="true"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
-                android:hint="name"
-                android:textColor="#000">
-
-            </com.google.android.material.textview.MaterialTextView>
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/profile"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:textColor="#000"
+        android:layout_marginBottom="8dp"
+        android:hint="name"></com.google.android.material.textview.MaterialTextView>
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/email"
@@ -55,6 +54,7 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="8dp"
                 android:hint="Email">
+
 
             </com.google.android.material.textview.MaterialTextView>
 

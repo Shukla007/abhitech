@@ -13,22 +13,30 @@ import android.widget.TextView;
 
 import androidx.viewpager.widget.PagerAdapter;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.smart.teach.R;
+
+import java.util.List;
 
 public class ViewPagerAdapter extends PagerAdapter {
 
-    private int[] images = {R.drawable.image1, R.drawable.image2, R.drawable.image3};
+    List<Integer> list;
+//    ViewPagerAdapter(List<Integer> imageList){
+//        this.list=imageList;
+//    }
+  static   private int[] images = {R.drawable.image1, R.drawable.image2, R.drawable.image3};
     private Context ctx;
     private LayoutInflater pagerLayoutInflater;
     View splashView;
 
-    public ViewPagerAdapter(Context ctx){
+    public ViewPagerAdapter(Context ctx,List<Integer> imageList){
         this.ctx = ctx;
+        this.list=imageList;
     }
 
     @Override
     public int getCount() {
-        return images.length;
+        return list.size();
     }
 
     @Override
@@ -43,7 +51,12 @@ public class ViewPagerAdapter extends PagerAdapter {
         splashView = pagerLayoutInflater.inflate( R.layout.viewpage, container, false);
 
         ImageView splashImageView = (ImageView) splashView.findViewById(R.id.imagepage);
-
+splashImageView.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+        Snackbar.make(view,"Image"+position,Snackbar.LENGTH_LONG).show();
+    }
+});
         //Go login activitywhen skip is clicked
 //        splashSkip.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -52,7 +65,7 @@ public class ViewPagerAdapter extends PagerAdapter {
 //            }
 //        });
 
-        splashImageView.setImageResource(images[position]);
+        splashImageView.setImageResource(list.get(position));
         container.addView(splashView);
 
         return splashView;
