@@ -5,16 +5,14 @@
     android:layout_height="match_parent">
 
 
-    <com.google.android.material.card.MaterialCardView
-        android:layout_width="match_parent"
-        android:layout_height="450dp">
+
 
         <ImageView
             android:id="@+id/imagepage"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="450dp"
             android:scaleType="centerCrop"
             android:src="@drawable/page1" />
 
-    </com.google.android.material.card.MaterialCardView>
+
 </RelativeLayout>
