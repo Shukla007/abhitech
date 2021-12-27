@@ -155,19 +155,18 @@ public class HomeH extends Fragment implements View.OnClickListener{
         switch (v.getId())
         {
             case R.id.card1:
-
-                Toast.makeText(getActivity(), "1", Toast.LENGTH_SHORT).show();
+              loadFragment(new courseDetail());
                 break;
             case R.id.card2:
-                Toast.makeText(getActivity(), "2", Toast.LENGTH_SHORT).show();
+                loadFragment(new courseDetail());
                 break;
 
             case R.id.card3:
-                Toast.makeText(getActivity(), "3", Toast.LENGTH_SHORT).show();
+                loadFragment(new courseDetail());
                 break;
 
             case R.id.card4:
-                Toast.makeText(getActivity(), "4", Toast.LENGTH_SHORT).show();
+                loadFragment(new courseDetail());
                 break;
 
 

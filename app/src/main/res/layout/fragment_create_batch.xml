@@ -1,26 +1,203 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Fragment.createBatch">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/profile_card"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:elevation="8dp"
+        app:cardCornerRadius="10dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/profile_image"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/profile"
+                app:civ_border_color="#E3CB2C"
+                app:civ_border_width="1dp" />
+
+            <TextView
+                android:id="@+id/userName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="UserName"
+                android:textColor="#111"
+                android:textSize="15dp" />
+
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <EditText
+        android:id="@+id/Course_discription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text=" Create live course batch"
-        android:textColor="#000"
-        android:gravity="center_horizontal"
-        android:layout_margin="5dp"/>
+        android:layout_below="@id/profile_card"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="@null"
+        android:hint="Add Discription..."
+        android:inputType="text|textMultiLine"
+        android:padding="5dp"
+        android:textColor="#111" />
 
+    <ImageButton
+        android:id="@+id/addPic"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_below="@id/Course_discription"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="#3A98EA"
+        android:contentDescription="Add Thumbnail."
+        android:padding="2dp"
+        android:src="@drawable/add_photo_alternate_24" />
+
+    <ImageView
+        android:id="@+id/thumbnail1"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_below="@+id/addPic"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:padding="5dp"
+        android:scaleType="centerCrop" />
+
+    <LinearLayout
+        android:id="@+id/duration_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/thumbnail1"
+        android:layout_margin="5dp"
+        android:padding="4dp">
+
+        <TextView
+            android:id="@+id/coursedurtxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="Course Duration"
+            android:textAllCaps="true"
+            android:textColor="#2E89EA"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/duration_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:entries="@array/country_arrays"
+            android:prompt="@string/country_prompt" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/priceDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/duration_layout"
+        android:layout_margin="5dp"
+        android:padding="4dp">
+
+        <TextView
+            android:id="@+id/coursedurtxt2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="Course Price "
+            android:textAllCaps="true"
+            android:textColor="#2E89EA"
+            android:textStyle="bold" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/price"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@null"
+            android:hint="500"
+            android:inputType="number"
+            android:textAllCaps="true"
+            android:textSize="15dp">
+
+        </com.google.android.material.textfield.TextInputEditText>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/pricelayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/priceDetail"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/setId"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:hint="Your Room Id "
+            android:textSize="15dp"
+
+            />
+
+        <Button
+            android:id="@+id/randdom_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_weight="1"
+            android:text="genarate id"
+
+            />
+
+    </LinearLayout>
 
     <Button
-        android:id="@+id/addPic"
+        android:id="@+id/create_batch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_margin="15dp"
-        android:text="Add Thumbnail"
-/>
+        android:layout_alignParentBottom="true"
+        android:layout_below="@id/pricelayout"
+        android:layout_margin="8dp"
+        android:drawableRight="@drawable/send_24"
+        android:padding="8dp"
+        android:text="Create Batch" />
 </RelativeLayout>
+</androidx.core.widget.NestedScrollView>
