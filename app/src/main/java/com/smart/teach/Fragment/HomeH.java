@@ -80,6 +80,8 @@ public class HomeH extends Fragment implements View.OnClickListener{
             public void onClick(View view) {
                 loadFragment(new createBatch());
                 Toast.makeText(getActivity(), "You clicked on Create button", Toast.LENGTH_SHORT).show();
+
+                loadFragment(new createBatch());
             }
         });
 
@@ -175,6 +177,7 @@ public class HomeH extends Fragment implements View.OnClickListener{
 
 
     }
+
 
     private void loadFragment(Fragment fragment) {
         FragmentManager fm = getFragmentManager();

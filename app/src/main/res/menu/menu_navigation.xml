@@ -3,19 +3,19 @@
 
     <item
         android:id="@+id/home_btn"
-        android:icon="@drawable/home"
+        android:icon="@drawable/home_24"
         android:title="Home" />
     <item
         android:id="@+id/search_btn"
-        android:icon="@drawable/search"
+        android:icon="@drawable/search_24"
         android:title="Serach" />
     <item
         android:id="@+id/Course_btn"
-        android:icon="@drawable/course"
+        android:icon="@drawable/ic_baseline_class_24"
         android:title="Course" />
     <item
         android:id="@+id/profile_btn"
-        android:icon="@drawable/profile"
+        android:icon="@drawable/person_24"
         android:title="Profile" />
 
 </menu>

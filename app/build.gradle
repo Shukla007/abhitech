@@ -58,6 +58,9 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
     implementation 'com.onesignal:OneSignal:[4.0.0, 4.99.99]'
     implementation 'me.relex:circleindicator:2.1.6'
+    implementation platform('com.google.firebase:firebase-bom:29.0.3')
+    implementation 'com.google.firebase:firebase-storage'
+
 
 
 }

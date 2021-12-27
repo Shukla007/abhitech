@@ -2,23 +2,23 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/home_btnD"
-        android:icon="@drawable/home"
+        android:icon="@drawable/home_24"
         android:title="Home" />
     <item
         android:id="@+id/profile_btnD"
-        android:icon="@drawable/profile"
+        android:icon="@drawable/person_24"
         android:title="Profile" />
     <item
         android:id="@+id/transaction_btnD"
-        android:icon="@drawable/transaction"
+        android:icon="@drawable/sync_v24"
         android:title="Transaction" />
     <item
         android:id="@+id/search_btnD"
-        android:icon="@drawable/search"
+        android:icon="@drawable/search_24"
         android:title="Search" />
     <item
         android:id="@+id/Course_btnD"
-        android:icon="@drawable/course"
+        android:icon="@drawable/ic_baseline_class_24"
         android:title="Course" />
 
     <group
