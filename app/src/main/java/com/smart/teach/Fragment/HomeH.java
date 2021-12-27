@@ -53,7 +53,7 @@ public class HomeH extends Fragment {
         viewPager = view.findViewById(R.id.viewpager);
 
         fab = view.findViewById(R.id.fab_btn);
-        List<Integer> imageList=new ArrayList<>();
+        List<Integer> imageList = new ArrayList<>();
         imageList.add(R.drawable.image1);
         imageList.add(R.drawable.image2);
         imageList.add(R.drawable.image3);
@@ -71,33 +71,32 @@ public class HomeH extends Fragment {
             }
         });
 
-        viewPagerAdapter = new ViewPagerAdapter(getActivity(),imageList);
+        viewPagerAdapter = new ViewPagerAdapter(getActivity(), imageList);
         viewPager.setAdapter(viewPagerAdapter);
-        CircleIndicator indicator = (CircleIndicator)view.findViewById(R.id.indicator);
+        CircleIndicator indicator = (CircleIndicator) view.findViewById(R.id.indicator);
         indicator.setViewPager(viewPager);
-handler=new Handler();
-timer=new Timer();
-timer.schedule(new TimerTask() {
-    @Override
-    public void run() {
-        handler.post(new Runnable() {
+        handler = new Handler();
+        timer = new Timer();
+        timer.schedule(new TimerTask() {
             @Override
             public void run() {
-                int i=viewPager.getCurrentItem();
-                if (i==imageList.size()-1){
-                    i=0;
-                    viewPager.setCurrentItem(i,true);
-                }
-                else {
-                    i++;
-                    viewPager.setCurrentItem(i,true);
-                }
+                handler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        int i = viewPager.getCurrentItem();
+                        if (i == imageList.size() - 1) {
+                            i = 0;
+                            viewPager.setCurrentItem(i, true);
+                        } else {
+                            i++;
+                            viewPager.setCurrentItem(i, true);
+                        }
+
+                    }
+                });
 
             }
-        });
-
-    }
-},4000,4000);
+        }, 4000, 4000);
         // pageSwitcher(page);
         ViewPager.OnPageChangeListener viewpager = new ViewPager.OnPageChangeListener() {
             @Override
@@ -142,6 +141,7 @@ timer.schedule(new TimerTask() {
         // milliseconds
 
     }
+
     private class RemindTask extends TimerTask {
         @Override
         public void run() {
