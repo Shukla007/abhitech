@@ -1,6 +1,8 @@
 package com.smart.teach.Fragment;
 
 import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.opengl.Visibility;
 import android.os.Bundle;
@@ -11,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
+import androidx.cardview.widget.CardView;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -35,14 +38,14 @@ import java.util.TimerTask;
 import me.relex.circleindicator.CircleIndicator;
 
 
-public class HomeH extends Fragment {
+public class HomeH extends Fragment implements View.OnClickListener{
     ViewPagerAdapter viewPagerAdapter;
     ViewPager viewPager;
     View view;
     Timer timer;
     int page = 1;
     Handler handler;
-
+    CardView cardView1,cardView2,cardView3,cardView4;
     FloatingActionButton fab;
     FirebaseAuth auth;
     FirebaseUser user;
@@ -56,8 +59,16 @@ public class HomeH extends Fragment {
         List<Integer> imageList = new ArrayList<>();
         imageList.add(R.drawable.image1);
         imageList.add(R.drawable.image2);
-        imageList.add(R.drawable.image3);
 
+        imageList.add(R.drawable.image3);
+        cardView1=view.findViewById(R.id.card1);
+        cardView2=view.findViewById(R.id.card2);
+        cardView3=view.findViewById(R.id.card3);
+        cardView4=view.findViewById(R.id.card4);
+        cardView1.setOnClickListener(this);
+        cardView2.setOnClickListener(this);
+        cardView3.setOnClickListener(this);
+        cardView4.setOnClickListener(this);
         fStore = FirebaseFirestore.getInstance();
         auth = FirebaseAuth.getInstance();
 
@@ -67,6 +78,7 @@ public class HomeH extends Fragment {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                loadFragment(new createBatch());
                 Toast.makeText(getActivity(), "You clicked on Create button", Toast.LENGTH_SHORT).show();
             }
         });
@@ -134,36 +146,42 @@ public class HomeH extends Fragment {
         });
     }
 
-    public void pageSwitcher(int seconds) {
-        timer = new Timer(); // At this line a new Thread will be created
-        timer.scheduleAtFixedRate(new RemindTask(), 0, seconds * 1000); // delay
-        // in
-        // milliseconds
-
-    }
-
-    private class RemindTask extends TimerTask {
-        @Override
-        public void run() {
 
 
-            if (page > 4) { // In my case the number of pages are 5
-                timer.cancel();
-                // Showing a toast for just testing purpose
+    @Override
+    public void onClick(View v) {
+        switch (v.getId())
+        {
+            case R.id.card1:
 
-            } else {
-                viewPager.setCurrentItem(page++);
-            }
+                Toast.makeText(getActivity(), "1", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.card2:
+                Toast.makeText(getActivity(), "2", Toast.LENGTH_SHORT).show();
+                break;
+
+            case R.id.card3:
+                Toast.makeText(getActivity(), "3", Toast.LENGTH_SHORT).show();
+                break;
+
+            case R.id.card4:
+                Toast.makeText(getActivity(), "4", Toast.LENGTH_SHORT).show();
+                break;
 
 
+
+            default:
         }
 
 
-        private void checkRole(String uid) {
-
-
-        }
     }
 
+    private void loadFragment(Fragment fragment) {
+        FragmentManager fm = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fm.beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_container, fragment);
+        fragmentTransaction.addToBackStack(null).commit();
+
+    }
 }
 

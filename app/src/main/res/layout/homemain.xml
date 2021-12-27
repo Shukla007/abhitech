@@ -88,6 +88,7 @@
     android:layout_width="150dp"
     app:cardCornerRadius="5dp"
     android:elevation="4dp"
+    android:id="@+id/card1"
     android:layout_margin="4dp"
     android:layout_height="match_parent">
     <LinearLayout
@@ -146,6 +147,7 @@
                <com.google.android.material.card.MaterialCardView
                    android:layout_width="150dp"
                    app:cardCornerRadius="5dp"
+                   android:id="@+id/card2"
                    android:layout_margin="4dp"
                    android:elevation="4dp"
                    android:layout_height="match_parent">
@@ -206,6 +208,7 @@
                    android:layout_width="150dp"
                    app:cardCornerRadius="5dp"
                    android:layout_margin="4dp"
+                   android:id="@+id/card3"
                    android:elevation="4dp"
                    android:layout_height="match_parent">
                    <LinearLayout
@@ -266,6 +269,7 @@
                    app:cardCornerRadius="5dp"
                    android:layout_margin="4dp"
                    android:elevation="4dp"
+                   android:id="@+id/card4"
                    android:layout_height="match_parent">
                    <LinearLayout
                        android:layout_width="match_parent"
