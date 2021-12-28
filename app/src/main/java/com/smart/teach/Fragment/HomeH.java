@@ -11,11 +11,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.cardview.widget.CardView;
 import androidx.viewpager.widget.ViewPager;
 
+import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
@@ -49,6 +51,8 @@ public class HomeH extends Fragment implements View.OnClickListener{
     FloatingActionButton fab;
     FirebaseAuth auth;
     FirebaseUser user;
+    ImageView imageView;
+    String userID;
     FirebaseFirestore fStore;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -61,10 +65,14 @@ public class HomeH extends Fragment implements View.OnClickListener{
         imageList.add(R.drawable.image2);
 
         imageList.add(R.drawable.image3);
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+        FirebaseUser user = auth.getCurrentUser();
+        userID=user.getUid();
         cardView1=view.findViewById(R.id.card1);
         cardView2=view.findViewById(R.id.card2);
         cardView3=view.findViewById(R.id.card3);
         cardView4=view.findViewById(R.id.card4);
+        imageView=view.findViewById(R.id.courseImg);
         cardView1.setOnClickListener(this);
         cardView2.setOnClickListener(this);
         cardView3.setOnClickListener(this);
@@ -74,7 +82,9 @@ public class HomeH extends Fragment implements View.OnClickListener{
 
         checkRole(auth.getCurrentUser().getUid());
 
-
+        if(user.getPhotoUrl()!=null){
+            Glide.with(this).load(user.getPhotoUrl()).into(imageView);
+        }
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
