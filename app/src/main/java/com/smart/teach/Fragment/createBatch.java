@@ -52,7 +52,7 @@ public class createBatch extends Fragment {
         addPic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+            pickImage();
             }
         });
 
@@ -60,28 +60,28 @@ public class createBatch extends Fragment {
         return view;
     }
 
-//    private void pickImage() {
-//        Intent intent = new Intent();
-//        intent.setType("image/*");
-//        intent.setAction(Intent.ACTION_GET_CONTENT);
-//        startActivityForResult(Intent.createChooser(intent,"Select thumbnail"),SELECT_IMAGE);
-//
-//
-//    }
-//
-//    @Override
-//    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-//        super.onActivityResult(requestCode, resultCode, data);
-//
-//        try {
-//            if (requestCode == 1 && data != null && data.getData() != null) {
-//                 Uri imgUri = data.getData();
-//                thumbnail.setImageURI(imgUri);
-//            }
-//        } catch (Exception e) {
-//            Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_SHORT).show();
-//        }
-//
-//
-//    }
+    private void pickImage() {
+        Intent intent = new Intent();
+        intent.setType("image/*");
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(Intent.createChooser(intent,"Select thumbnail"),SELECT_IMAGE);
+
+
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        try {
+            if (requestCode == 1 && data != null && data.getData() != null) {
+                 Uri imgUri = data.getData();
+                thumbnail.setImageURI(imgUri);
+            }
+        } catch (Exception e) {
+            Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
+
+
+    }
 }
