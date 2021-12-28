@@ -38,6 +38,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.onesignal.OneSignal;
 import com.smart.teach.Fragment.Home;
 import com.smart.teach.Fragment.HomeH;
+import com.smart.teach.Fragment.search;
 import com.smart.teach.profile;
 
 //import com.bumptech.glide.Glide;
@@ -114,6 +115,11 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.home_btnD:
                         Toast.makeText(getApplicationContext(), "Home Panel is Open", Toast.LENGTH_LONG).show();
                         drawer.closeDrawer(GravityCompat.START);
+
+                        break;
+
+                    case R.id.search_btn:
+                        loadFragment(new search());
 
                         break;
 

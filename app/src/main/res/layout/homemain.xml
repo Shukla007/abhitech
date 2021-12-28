@@ -6,7 +6,6 @@
     android:layout_height="match_parent">
 
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -31,7 +30,7 @@
                 android:id="@+id/indicator"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
-               android:layout_marginTop="149dp"
+                android:layout_marginTop="149dp"
                 android:textSize="40dp"
 
 
@@ -39,324 +38,356 @@
 
         </RelativeLayout>
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="0dp"
-    android:layout_marginTop="10dp"
-    android:layout_marginLeft="10dp"
-    android:layout_marginRight="10dp"
-    android:layout_weight="0.5"
-    tools:ignore="Suspicious0dp">
-
-   <LinearLayout
-       android:layout_width="7dp"
-       android:background="#0484EA"
-       android:layout_height="27dp"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:text="Trending courses"
-        android:textSize="14dp"
-        android:textStyle="bold"
-        android:textColor="#111"
-        android:layout_marginLeft="10dp"
-        android:layout_height="wrap_content"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:text="View All"
-
-        android:textSize="14dp"
-        android:textStyle="bold"
-       android:layout_marginLeft="150dp"
-        android:textColor="#0484EA"
-        android:layout_height="wrap_content"/>
-
-</LinearLayout>
-
-        <HorizontalScrollView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="2.8"
-            android:layout_marginTop="10dp"
-            android:scrollbars="none">
-
-           <LinearLayout
-               android:layout_width="match_parent"
-               android:layout_marginLeft="10dp"
-               android:layout_marginRight="10dp"
-               android:layout_height="match_parent">
-<com.google.android.material.card.MaterialCardView
-    android:layout_width="150dp"
-    app:cardCornerRadius="5dp"
-    android:elevation="4dp"
-    android:id="@+id/card1"
-    android:layout_margin="4dp"
-    android:layout_height="match_parent">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:layout_height="match_parent">
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:id="@+id/courseImg"
-            android:scaleType="centerCrop"
-            android:src="@drawable/image1" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:text="4 week"
-            android:id="@+id/courseDur"
-            android:layout_marginLeft="4dp"
-            android:textSize="10dp"
-            android:layout_height="wrap_content"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:text="Mathematics 12th"
-            android:textColor="#111"
-            android:id="@+id/courseTitle"
-            android:textStyle="bold"
-            android:layout_marginLeft="4dp"
-            android:textSize="10dp"
-            android:layout_height="wrap_content"/>
-       <LinearLayout
-           android:layout_width="match_parent"
-           android:orientation="horizontal"
-           android:layout_height="wrap_content">
-           <TextView
-               android:layout_width="wrap_content"
-               android:text="Rs"
-               android:textSize="10dp"
-               android:textColor="#52D641"
-               android:layout_marginLeft="4dp"
-               android:layout_height="wrap_content"/>
-           <TextView
-               android:layout_width="wrap_content"
-               android:text="250/-"
-               android:id="@+id/coursePrice"
-               android:textSize="10dp"
-               android:textColor="#52D641"
-               android:layout_marginLeft="3dp"
-               android:layout_height="wrap_content"/>
-
-       </LinearLayout>
-    </LinearLayout>
-
-
-</com.google.android.material.card.MaterialCardView>
-
-
-               <com.google.android.material.card.MaterialCardView
-                   android:layout_width="150dp"
-                   app:cardCornerRadius="5dp"
-                   android:id="@+id/card2"
-                   android:layout_margin="4dp"
-                   android:elevation="4dp"
-                   android:layout_height="match_parent">
-                   <LinearLayout
-                       android:layout_width="match_parent"
-                       android:orientation="vertical"
-                       android:layout_height="match_parent">
-                       <ImageView
-                           android:layout_width="match_parent"
-                           android:layout_height="80dp"
-                           android:id="@+id/courseImg2"
-                           android:scaleType="centerCrop"
-                           android:src="@drawable/image2" />
-                       <TextView
-                           android:layout_width="wrap_content"
-                           android:text="4 week"
-                           android:id="@+id/courseDur2"
-                           android:layout_marginLeft="4dp"
-                           android:textSize="10dp"
-                           android:layout_height="wrap_content"/>
-                       <TextView
-                           android:layout_width="wrap_content"
-                           android:text="Physics 12th"
-                           android:textColor="#111"
-                           android:id="@+id/courseTitle2"
-                           android:textStyle="bold"
-                           android:layout_marginLeft="4dp"
-                           android:textSize="10dp"
-                           android:layout_height="wrap_content"/>
-                       <LinearLayout
-                           android:layout_width="match_parent"
-                           android:orientation="horizontal"
-                           android:layout_height="wrap_content">
-                           <TextView
-                               android:layout_width="wrap_content"
-                               android:text="Rs"
-                               android:textSize="10dp"
-                               android:textColor="#52D641"
-                               android:layout_marginLeft="4dp"
-                               android:layout_height="wrap_content"/>
-                           <TextView
-                               android:layout_width="wrap_content"
-                               android:text="250/-"
-                               android:id="@+id/coursePrice2"
-                               android:textSize="10dp"
-                               android:textColor="#52D641"
-                               android:layout_marginLeft="3dp"
-                               android:layout_height="wrap_content"/>
-
-                       </LinearLayout>
-                   </LinearLayout>
-
-
-               </com.google.android.material.card.MaterialCardView>
-
-
-               <com.google.android.material.card.MaterialCardView
-                   android:layout_width="150dp"
-                   app:cardCornerRadius="5dp"
-                   android:layout_margin="4dp"
-                   android:id="@+id/card3"
-                   android:elevation="4dp"
-                   android:layout_height="match_parent">
-                   <LinearLayout
-                       android:layout_width="match_parent"
-                       android:orientation="vertical"
-                       android:layout_height="match_parent">
-                       <ImageView
-                           android:layout_width="match_parent"
-                           android:layout_height="80dp"
-                           android:id="@+id/courseImg3"
-                           android:scaleType="centerCrop"
-                           android:src="@drawable/image3" />
-                       <TextView
-                           android:layout_width="wrap_content"
-                           android:text="4 week"
-                           android:id="@+id/courseDur3"
-                           android:layout_marginLeft="4dp"
-                           android:textSize="10dp"
-                           android:layout_height="wrap_content"/>
-                       <TextView
-                           android:layout_width="wrap_content"
-                           android:text="Chemistry 12th"
-                           android:textColor="#111"
-                           android:id="@+id/courseTitle3"
-                           android:textStyle="bold"
-                           android:layout_marginLeft="4dp"
-                           android:textSize="10dp"
-                           android:layout_height="wrap_content"/>
-                       <LinearLayout
-                           android:layout_width="match_parent"
-                           android:orientation="horizontal"
-                           android:layout_height="wrap_content">
-                           <TextView
-                               android:layout_width="wrap_content"
-                               android:text="Rs"
-                               android:textSize="10dp"
-                               android:textColor="#52D641"
-                               android:layout_marginLeft="4dp"
-                               android:layout_height="wrap_content"/>
-                           <TextView
-                               android:layout_width="wrap_content"
-                               android:text="250/-"
-                               android:id="@+id/coursePrice3"
-                               android:textSize="10dp"
-                               android:textColor="#52D641"
-                               android:layout_marginLeft="3dp"
-                               android:layout_height="wrap_content"/>
-
-                       </LinearLayout>
-                   </LinearLayout>
-
-
-               </com.google.android.material.card.MaterialCardView>
-
-
-               <com.google.android.material.card.MaterialCardView
-                   android:layout_width="150dp"
-                   app:cardCornerRadius="5dp"
-                   android:layout_margin="4dp"
-                   android:elevation="4dp"
-                   android:id="@+id/card4"
-                   android:layout_height="match_parent">
-                   <LinearLayout
-                       android:layout_width="match_parent"
-                       android:orientation="vertical"
-                       android:layout_height="match_parent">
-                       <ImageView
-                           android:layout_width="match_parent"
-                           android:layout_height="80dp"
-                           android:id="@+id/courseImg4"
-                           android:scaleType="centerCrop"
-                           android:src="@drawable/image1" />
-                       <TextView
-                           android:layout_width="wrap_content"
-                           android:text="4 week"
-                           android:id="@+id/courseDur4"
-                           android:layout_marginLeft="4dp"
-                           android:textSize="10dp"
-                           android:layout_height="wrap_content"/>
-                       <TextView
-                           android:layout_width="wrap_content"
-                           android:text="Mathematics 12th"
-                           android:textColor="#111"
-                           android:id="@+id/courseTitle4"
-                           android:textStyle="bold"
-                           android:layout_marginLeft="4dp"
-                           android:textSize="10dp"
-                           android:layout_height="wrap_content"/>
-                       <LinearLayout
-                           android:layout_width="match_parent"
-                           android:orientation="horizontal"
-                           android:layout_height="wrap_content">
-                           <TextView
-                               android:layout_width="wrap_content"
-                               android:text="Rs"
-                               android:textSize="10dp"
-                               android:textColor="#52D641"
-                               android:layout_marginLeft="4dp"
-                               android:layout_height="wrap_content"/>
-                           <TextView
-                               android:layout_width="wrap_content"
-                               android:text="250/-"
-                               android:id="@+id/coursePrice4"
-                               android:textSize="10dp"
-                               android:textColor="#52D641"
-                               android:layout_marginLeft="3dp"
-                               android:layout_height="wrap_content"/>
-
-                       </LinearLayout>
-                   </LinearLayout>
-
-
-               </com.google.android.material.card.MaterialCardView>
-
-
-
-           </LinearLayout>
-        </HorizontalScrollView>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
             android:layout_marginRight="10dp"
             android:layout_weight="0.5"
             tools:ignore="Suspicious0dp">
 
             <LinearLayout
                 android:layout_width="7dp"
-                android:background="#EA0404"
-                android:layout_height="27dp"/>
+                android:layout_height="27dp"
+                android:background="#0484EA" />
+
             <TextView
                 android:layout_width="wrap_content"
-                android:text="Live Batches"
-                android:textSize="14dp"
-                android:textStyle="bold"
-                android:textColor="#111"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:layout_height="wrap_content"/>
-<!--            <TextView-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:text="View All"-->
+                android:text="Trending courses"
+                android:textColor="#111"
+                android:textSize="14dp"
+                android:textStyle="bold" />
 
-<!--                android:textSize="14dp"-->
-<!--                android:textStyle="bold"-->
-<!--                android:layout_marginLeft="150dp"-->
-<!--                android:textColor="#0484EA"-->
-<!--                android:layout_height="wrap_content"/>-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginLeft="150dp"
+                android:text="View All"
+                android:textColor="#0484EA"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="2.5"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card1"
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:elevation="4dp"
+                    app:cardCornerRadius="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/courseImg"
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/image1" />
+
+                        <TextView
+                            android:id="@+id/courseDur"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:text="4 week"
+                            android:textSize="10dp" />
+
+                        <TextView
+                            android:id="@+id/courseTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:text="Mathematics 12th"
+                            android:textColor="#111"
+                            android:textSize="10dp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="4dp"
+                                android:text="Rs"
+                                android:textColor="#52D641"
+                                android:textSize="10dp" />
+
+                            <TextView
+                                android:id="@+id/coursePrice"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="3dp"
+                                android:text="250/-"
+                                android:textColor="#52D641"
+                                android:textSize="10dp" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card2"
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:elevation="4dp"
+                    app:cardCornerRadius="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/courseImg2"
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/image2" />
+
+                        <TextView
+                            android:id="@+id/courseDur2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:text="4 week"
+                            android:textSize="10dp" />
+
+                        <TextView
+                            android:id="@+id/courseTitle2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:text="Physics 12th"
+                            android:textColor="#111"
+                            android:textSize="10dp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="4dp"
+                                android:text="Rs"
+                                android:textColor="#52D641"
+                                android:textSize="10dp" />
+
+                            <TextView
+                                android:id="@+id/coursePrice2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="3dp"
+                                android:text="250/-"
+                                android:textColor="#52D641"
+                                android:textSize="10dp" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card3"
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:elevation="4dp"
+                    app:cardCornerRadius="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/courseImg3"
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/image3" />
+
+                        <TextView
+                            android:id="@+id/courseDur3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:text="4 week"
+                            android:textSize="10dp" />
+
+                        <TextView
+                            android:id="@+id/courseTitle3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:text="Chemistry 12th"
+                            android:textColor="#111"
+                            android:textSize="10dp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="4dp"
+                                android:text="Rs"
+                                android:textColor="#52D641"
+                                android:textSize="10dp" />
+
+                            <TextView
+                                android:id="@+id/coursePrice3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="3dp"
+                                android:text="250/-"
+                                android:textColor="#52D641"
+                                android:textSize="10dp" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card4"
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:elevation="4dp"
+                    app:cardCornerRadius="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/courseImg4"
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/image1" />
+
+                        <TextView
+                            android:id="@+id/courseDur4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:text="4 week"
+                            android:textSize="10dp" />
+
+                        <TextView
+                            android:id="@+id/courseTitle4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:text="Mathematics 12th"
+                            android:textColor="#111"
+                            android:textSize="10dp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="4dp"
+                                android:text="Rs"
+                                android:textColor="#52D641"
+                                android:textSize="10dp" />
+
+                            <TextView
+                                android:id="@+id/coursePrice4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="3dp"
+                                android:text="250/-"
+                                android:textColor="#52D641"
+                                android:textSize="10dp" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="0.5"
+            tools:ignore="Suspicious0dp">
+
+            <LinearLayout
+                android:layout_width="7dp"
+                android:layout_height="27dp"
+                android:background="#EA0404" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="Live Batches"
+                android:textColor="#111"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+            <!--            <TextView-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:text="View All"-->
+
+            <!--                android:textSize="14dp"-->
+            <!--                android:textStyle="bold"-->
+            <!--                android:layout_marginLeft="150dp"-->
+            <!--                android:textColor="#0484EA"-->
+            <!--                android:layout_height="wrap_content"/>-->
 
         </LinearLayout>
 
