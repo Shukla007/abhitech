@@ -118,13 +118,13 @@ public class MainActivity extends AppCompatActivity {
 
                         break;
 
-                    case R.id.search_btn:
+                    case R.id.search_btnD:
                         loadFragment(new search());
-
+                        drawer.closeDrawer(GravityCompat.START);
                         break;
 
 
-                    case R.id.Course_btn:
+                    case R.id.Course_btnD:
                         Toast.makeText(getApplicationContext(), "Setting Panel is Open", Toast.LENGTH_LONG).show();
                         drawer.closeDrawer(GravityCompat.START);
                         break;
@@ -152,6 +152,10 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case R.id.profile_btn:
                         loadFragment(new Home());
+
+                        break;
+                    case R.id.search_btn:
+                        loadFragment(new search());
 
                         break;
                 }

@@ -12,13 +12,12 @@ import com.smart.teach.R;
 
 public class search extends Fragment {
 
-
+View view;
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_search, container, false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        view = inflater.inflate(R.layout.fragment_search, container, false);
 
 
+        return view;
     }
 }
