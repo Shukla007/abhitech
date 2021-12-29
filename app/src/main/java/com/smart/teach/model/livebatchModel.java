@@ -1,8 +1,47 @@
 package com.smart.teach.model;
 
 public class livebatchModel          {
-   String discription,duration,price,roomid;
+   String Title,Discription,Price,Duration,Roomid;
 
+    public String getTitle() {
+        return Title;
+    }
+
+    public void setTitle(String title) {
+        Title = title;
+    }
+
+    public String getDiscription() {
+        return Discription;
+    }
+
+    public void setDiscription(String discription) {
+        Discription = discription;
+    }
+
+    public String getPrice() {
+        return Price;
+    }
+
+    public void setPrice(String price) {
+        Price = price;
+    }
+
+    public String getDuration() {
+        return Duration;
+    }
+
+    public void setDuration(String duration) {
+        Duration = duration;
+    }
+
+    public String getRoomid() {
+        return Roomid;
+    }
+
+    public void setRoomid(String roomid) {
+        Roomid = roomid;
+    }
 //    public livebatchModel(String discription, String duration, String price, String roomid) {
 //        this.discription = discription;
 //        this.duration = duration;
@@ -11,27 +50,5 @@ public class livebatchModel          {
 //    }
 
 
-    public String getDiscription() {
-        return discription;
-    }
 
-    public void setDiscription(String discription) {
-        this.discription = discription;
-    }
-
-    public String getDuration() {
-        return duration;
-    }
-
-    public void setDuration(String duration) {
-        this.duration = duration;
-    }
-
-    public String getPrice() {
-        return price;
-    }
-
-    public void setPrice(String price) {
-        this.price = price;
-    }
 }

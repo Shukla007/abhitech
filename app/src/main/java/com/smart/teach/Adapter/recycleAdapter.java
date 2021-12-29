@@ -37,10 +37,11 @@ public class recycleAdapter extends RecyclerView.Adapter <recycleAdapter.ViewHol
 
     @Override
     public void onBindViewHolder(@NonNull recycleAdapter.ViewHolder holder, int position) {
+        holder.title.setText(list.get(position).getTitle());
         holder.discription.setText(list.get(position).getDiscription());
         holder.price.setText(list.get(position).getPrice());
         holder.duration.setText(list.get(position).getDuration());
-        // holder.price.setText(itemList.get(position).getPrice());
+        holder.price.setText(list.get(position).getPrice());
 
     }
 
@@ -50,13 +51,15 @@ public class recycleAdapter extends RecyclerView.Adapter <recycleAdapter.ViewHol
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView  discription,price,duration,roomid;
+        TextView  title,discription,price,duration,roomid;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+            title = itemView.findViewById(R.id.courseTitle);
             discription = itemView.findViewById(R.id.batchDis);
             price = itemView.findViewById(R.id.coursePrice);
             duration = itemView.findViewById(R.id.courseDur);
+
         }
     }
 }
