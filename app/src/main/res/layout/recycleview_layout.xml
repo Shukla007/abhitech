@@ -15,7 +15,7 @@
 
             <ImageView
                 android:id="@+id/course_thumb"
-                android:layout_width="150dp"
+                android:layout_width="140dp"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
                 android:src="@mipmap/ic_launcher" />
