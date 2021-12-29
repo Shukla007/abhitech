@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        app:cardCornerRadius="4dp"
+        android:layout_margin="5dp"
+        android:layout_height="150dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/course_thumb"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_launcher"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_marginLeft="5dp"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/courseTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                android:textColor="#111"
+                android:text="Chemistry class 10th chapter 2"/>
+
+            <TextView
+                android:id="@+id/batchDis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:textStyle="italic"
+                android:maxLines="3"
+                android:text="@string/dis"/>
+
+            <TextView
+                android:id="@+id/coursePrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#67EA2F"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                android:text="Rs 500 -/"/>
+
+            <TextView
+                android:id="@+id/courseDur"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:layout_marginTop="5dp"
+                android:text="6 Week"/>
+
+            <TextView
+                android:id="@+id/courseIns"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#316FDA"
+                android:layout_marginTop="5dp"
+                android:text="Manish kumar"/>
+
+
+        </LinearLayout>
+
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</RelativeLayout>

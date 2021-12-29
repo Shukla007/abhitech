@@ -10,6 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+
         android:weightSum="10">
 
 
@@ -56,16 +57,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
+                android:layout_weight="1"
                 android:text="Trending courses"
                 android:textColor="#111"
                 android:textSize="14dp"
                 android:textStyle="bold" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="67dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:layout_marginLeft="150dp"
+                android:gravity="end"
                 android:text="View All"
                 android:textColor="#0484EA"
                 android:textSize="14dp"
@@ -77,7 +78,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginTop="10dp"
-            android:layout_weight="2.5"
+            android:layout_weight="3"
             android:scrollbars="none">
 
             <LinearLayout
@@ -88,10 +89,10 @@
 
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/card1"
-                    android:layout_width="150dp"
+                    android:layout_width="200dp"
                     android:layout_height="match_parent"
                     android:layout_margin="4dp"
-                    android:elevation="4dp"
+                    android:elevation="7dp"
                     app:cardCornerRadius="5dp">
 
                     <LinearLayout
@@ -102,7 +103,7 @@
                         <ImageView
                             android:id="@+id/courseImg"
                             android:layout_width="match_parent"
-                            android:layout_height="80dp"
+                            android:layout_height="90dp"
                             android:scaleType="centerCrop"
                             android:src="@drawable/image1" />
 
@@ -121,7 +122,7 @@
                             android:layout_marginLeft="4dp"
                             android:text="Mathematics 12th"
                             android:textColor="#111"
-                            android:textSize="10dp"
+                            android:textSize="12dp"
                             android:textStyle="bold" />
 
                         <LinearLayout
@@ -155,7 +156,7 @@
 
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/card2"
-                    android:layout_width="150dp"
+                    android:layout_width="200dp"
                     android:layout_height="match_parent"
                     android:layout_margin="4dp"
                     android:elevation="4dp"
@@ -169,7 +170,7 @@
                         <ImageView
                             android:id="@+id/courseImg2"
                             android:layout_width="match_parent"
-                            android:layout_height="80dp"
+                            android:layout_height="90dp"
                             android:scaleType="centerCrop"
                             android:src="@drawable/image2" />
 
@@ -188,7 +189,7 @@
                             android:layout_marginLeft="4dp"
                             android:text="Physics 12th"
                             android:textColor="#111"
-                            android:textSize="10dp"
+                            android:textSize="12dp"
                             android:textStyle="bold" />
 
                         <LinearLayout
@@ -222,7 +223,7 @@
 
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/card3"
-                    android:layout_width="150dp"
+                    android:layout_width="200dp"
                     android:layout_height="match_parent"
                     android:layout_margin="4dp"
                     android:elevation="4dp"
@@ -236,7 +237,7 @@
                         <ImageView
                             android:id="@+id/courseImg3"
                             android:layout_width="match_parent"
-                            android:layout_height="80dp"
+                            android:layout_height="90dp"
                             android:scaleType="centerCrop"
                             android:src="@drawable/image3" />
 
@@ -255,7 +256,7 @@
                             android:layout_marginLeft="4dp"
                             android:text="Chemistry 12th"
                             android:textColor="#111"
-                            android:textSize="10dp"
+                            android:textSize="12dp"
                             android:textStyle="bold" />
 
                         <LinearLayout
@@ -289,7 +290,7 @@
 
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/card4"
-                    android:layout_width="150dp"
+                    android:layout_width="200dp"
                     android:layout_height="match_parent"
                     android:layout_margin="4dp"
                     android:elevation="4dp"
@@ -303,7 +304,7 @@
                         <ImageView
                             android:id="@+id/courseImg4"
                             android:layout_width="match_parent"
-                            android:layout_height="80dp"
+                            android:layout_height="90dp"
                             android:scaleType="centerCrop"
                             android:src="@drawable/image1" />
 
@@ -322,7 +323,7 @@
                             android:layout_marginLeft="4dp"
                             android:text="Mathematics 12th"
                             android:textColor="#111"
-                            android:textSize="10dp"
+                            android:textSize="12dp"
                             android:textStyle="bold" />
 
                         <LinearLayout
@@ -367,11 +368,14 @@
             tools:ignore="Suspicious0dp">
 
             <LinearLayout
+                android:id="@+id/livecoursetag"
                 android:layout_width="7dp"
                 android:layout_height="27dp"
-                android:background="#EA0404" />
+                android:background="#EA0404"
+                android:orientation="horizontal" />
 
             <TextView
+                android:id="@+id/livebatchhead"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
@@ -393,6 +397,7 @@
 
 
     </LinearLayout>
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_btn"
         android:layout_width="wrap_content"
@@ -407,4 +412,11 @@
 
     </com.google.android.material.floatingactionbutton.FloatingActionButton>
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycleview1"
+        android:layout_width="match_parent"
+        android:nestedScrollingEnabled="false"
+        android:layout_height="match_parent">
+
+    </androidx.recyclerview.widget.RecyclerView>
 </RelativeLayout>

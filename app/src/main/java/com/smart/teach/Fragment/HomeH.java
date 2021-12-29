@@ -1,20 +1,23 @@
 package com.smart.teach.Fragment;
 
+import android.annotation.SuppressLint;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
-import android.content.Intent;
-import android.opengl.Visibility;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import com.bumptech.glide.Glide;
@@ -22,14 +25,18 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.smart.teach.Adapter.ViewPagerAdapter;
+import com.smart.teach.Adapter.recycleAdapter;
 import com.smart.teach.R;
-import com.smart.teach.Teacher;
-import com.smart.teach.joinUsers_Activity;
-import com.smart.teach.student_login;
+import com.smart.teach.model.livebatchModel;
 
 
 import java.util.ArrayList;
@@ -40,21 +47,27 @@ import java.util.TimerTask;
 import me.relex.circleindicator.CircleIndicator;
 
 
-public class HomeH extends Fragment implements View.OnClickListener{
+public class HomeH extends Fragment implements View.OnClickListener {
     ViewPagerAdapter viewPagerAdapter;
     ViewPager viewPager;
     View view;
     Timer timer;
     int page = 1;
     Handler handler;
-    CardView cardView1,cardView2,cardView3,cardView4;
+    CardView cardView1, cardView2, cardView3, cardView4;
     FloatingActionButton fab;
     FirebaseAuth auth;
     FirebaseUser user;
     ImageView imageView;
     String userID;
     FirebaseFirestore fStore;
+    RecyclerView recyclerView;
+    DatabaseReference reference;
+    FirebaseDatabase db;
+    recycleAdapter adapter;
+    ArrayList<livebatchModel>  list;
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.homemain, container, false);
         viewPager = view.findViewById(R.id.viewpager);
@@ -67,12 +80,42 @@ public class HomeH extends Fragment implements View.OnClickListener{
         imageList.add(R.drawable.image3);
         FirebaseAuth auth = FirebaseAuth.getInstance();
         FirebaseUser user = auth.getCurrentUser();
-        userID=user.getUid();
-        cardView1=view.findViewById(R.id.card1);
-        cardView2=view.findViewById(R.id.card2);
-        cardView3=view.findViewById(R.id.card3);
-        cardView4=view.findViewById(R.id.card4);
-        imageView=view.findViewById(R.id.courseImg);
+        db = FirebaseDatabase.getInstance();
+        userID = user.getUid();
+
+        recyclerView = view.findViewById(R.id.recycleview1);
+        reference = FirebaseDatabase.getInstance().getReference("Live Batches");
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        list = new ArrayList<>();
+        adapter = new recycleAdapter(getContext(),list);
+        recyclerView.setAdapter(adapter);
+
+        reference.addValueEventListener(new ValueEventListener() {
+            @SuppressLint("NotifyDataSetChanged")
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                 for (DataSnapshot dataSnapshot : snapshot.getChildren()){
+                     livebatchModel batches = dataSnapshot.getValue(livebatchModel.class);
+                     list.add(batches);
+                 }
+                 adapter.notifyDataSetChanged();
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+        cardView1 = view.findViewById(R.id.card1);
+        cardView2 = view.findViewById(R.id.card2);
+        cardView3 = view.findViewById(R.id.card3);
+        cardView4 = view.findViewById(R.id.card4);
+        imageView = view.findViewById(R.id.courseImg);
         cardView1.setOnClickListener(this);
         cardView2.setOnClickListener(this);
         cardView3.setOnClickListener(this);
@@ -82,7 +125,7 @@ public class HomeH extends Fragment implements View.OnClickListener{
 
         checkRole(auth.getCurrentUser().getUid());
 
-        if(user.getPhotoUrl()!=null){
+        if (user.getPhotoUrl() != null) {
             Glide.with(this).load(user.getPhotoUrl()).into(imageView);
         }
         fab.setOnClickListener(new View.OnClickListener() {
@@ -143,6 +186,8 @@ public class HomeH extends Fragment implements View.OnClickListener{
         return view;
     }
 
+
+
     private void checkRole(String uid) {
         DocumentReference df = fStore.collection("Users").document(uid);
 
@@ -159,13 +204,11 @@ public class HomeH extends Fragment implements View.OnClickListener{
     }
 
 
-
     @Override
     public void onClick(View v) {
-        switch (v.getId())
-        {
+        switch (v.getId()) {
             case R.id.card1:
-              loadFragment(new courseDetail());
+                loadFragment(new courseDetail());
                 break;
             case R.id.card2:
                 loadFragment(new courseDetail());
@@ -178,7 +221,6 @@ public class HomeH extends Fragment implements View.OnClickListener{
             case R.id.card4:
                 loadFragment(new courseDetail());
                 break;
-
 
 
             default:
