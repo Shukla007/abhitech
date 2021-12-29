@@ -47,12 +47,26 @@
 
     </com.google.android.material.card.MaterialCardView>
 
+    <EditText
+        android:id="@+id/Course_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/profile_card"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="@null"
+        android:hint="Add Title..."
+        android:inputType="text"
+        android:padding="5dp"
+        android:textColor="#111" />
 
     <EditText
         android:id="@+id/Course_discription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/profile_card"
+        android:layout_below="@id/Course_title"
         android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="5dp"

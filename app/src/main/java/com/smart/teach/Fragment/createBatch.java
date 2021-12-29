@@ -9,6 +9,7 @@ import android.net.Uri;
 import android.os.Bundle;
 
 import android.provider.MediaStore;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -75,28 +76,35 @@ public class createBatch extends Fragment {
         imageProgress = view.findViewById(R.id.imageProgress);
 
         EditText discription = view.findViewById(R.id.Course_discription);
+        EditText title = view.findViewById(R.id.Course_title);
         Spinner duration = view.findViewById(R.id.duration_spinner);
         EditText price = view.findViewById(R.id.price);
         TextView roomid = view.findViewById(R.id.setId);
-        Button create= view.findViewById(R.id.create_batch);
+        Button create = view.findViewById(R.id.create_batch);
 
 
         create.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String Discription = discription.getText().toString();
+                String Title = title.getText().toString();
                 String Duration = duration.getSelectedItem().toString();
                 String Price = price.getText().toString();
                 String RoomId = roomid.getText().toString();
 
-                //Hashmap
-                HashMap<String, String> livebatch = new HashMap<>();
-                livebatch.put("Title", Discription);
-                livebatch.put("Duration", Duration);
-                livebatch.put("Price", Price);
-                livebatch.put("RoomId", RoomId);
+                if (TextUtils.isEmpty(Title) ||TextUtils.isEmpty(Discription) || TextUtils.isEmpty(Duration) || TextUtils.isEmpty(Price) || TextUtils.isEmpty(RoomId)) {
+                    Toast.makeText(getActivity(), "Empty field", Toast.LENGTH_SHORT).show();
+                } else {
+                    //Hashmap
+                    HashMap<String, String> livebatch = new HashMap<>();
+                    livebatch.put("Title", Title);
+                    livebatch.put("Discription", Discription);
+                    livebatch.put("Duration", Duration);
+                    livebatch.put("Price", Price);
+                    livebatch.put("RoomId", RoomId);
 
-                reference.push().setValue(livebatch);
+                    reference.push().setValue(livebatch);
+                }
 
 
             }
@@ -180,7 +188,7 @@ public class createBatch extends Fragment {
         bitmap.compress(Bitmap.CompressFormat.JPEG, 100, btos);
         mStorageRef = FirebaseStorage.getInstance().getReference()
                 .child("CourseImage")
-                .child(random+".jpeg");
+                .child(random + ".jpeg");
 
         mStorageRef.putBytes(btos.toByteArray())
                 .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
