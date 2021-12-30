@@ -50,7 +50,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:text="Rs 500 -/"
-                    android:textColor="#67EA2F"
+                    android:textColor="#51C121"
                     android:textStyle="bold" />
 
                 <TextView
