@@ -69,7 +69,7 @@ public class HomeH extends Fragment implements View.OnClickListener {
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.homemain, container, false);
+        view = inflater.inflate(R.layout.testingmain, container, false);
         viewPager = view.findViewById(R.id.viewpager);
 
         fab = view.findViewById(R.id.fab_btn);
