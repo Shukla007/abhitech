@@ -92,7 +92,7 @@ public class createBatch extends Fragment {
                 String Price = price.getText().toString();
                 String RoomId = roomid.getText().toString();
 
-                if (TextUtils.isEmpty(Title) ||TextUtils.isEmpty(Discription) || TextUtils.isEmpty(Duration) || TextUtils.isEmpty(Price) || TextUtils.isEmpty(RoomId)) {
+                if (TextUtils.isEmpty(Title) || TextUtils.isEmpty(Discription) || TextUtils.isEmpty(Duration) || TextUtils.isEmpty(Price) || TextUtils.isEmpty(RoomId)) {
                     Toast.makeText(getActivity(), "Empty field", Toast.LENGTH_SHORT).show();
                 } else {
                     //Hashmap
@@ -102,6 +102,7 @@ public class createBatch extends Fragment {
                     livebatch.put("Duration", Duration);
                     livebatch.put("Price", Price);
                     livebatch.put("RoomId", RoomId);
+                    // livebatch.put("Thunbnail", ));
 
                     reference.push().setValue(livebatch);
                 }
