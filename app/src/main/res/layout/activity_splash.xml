@@ -6,8 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".splashscreen.splashActivity">
 
+    <ImageView
+        android:id="@+id/wave_image"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/wave_main" />
+
 
     <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/splashAnimation"
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:layout_centerInParent="true"
@@ -18,14 +26,28 @@
     </com.airbnb.lottie.LottieAnimationView>
 
 
-
     <TextView
-        android:layout_alignParentBottom="true"
-        android:gravity="center"
-        android:textSize="18dp"
-        android:textColor="#111"
+        android:id="@+id/name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="MenTee"/>
+        android:layout_below="@id/splashAnimation"
+        android:fontFamily="sans-serif-condensed"
+        android:gravity="center"
+        android:text="MenTee"
+        android:textColor="#111"
+        android:textFontWeight="5"
+        android:textSize="20dp"
+        android:textStyle="normal" />
+
+    <TextView
+        android:id="@+id/versionname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/name"
+        android:gravity="center"
+        android:text="v0.1"
+        android:textColor="#244DE3"
+        android:textSize="13dp"
+        android:textStyle="bold" />
 
 </RelativeLayout>

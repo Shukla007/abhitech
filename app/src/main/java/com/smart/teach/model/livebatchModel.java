@@ -1,7 +1,20 @@
 package com.smart.teach.model;
 
-public class livebatchModel          {
-   String Title,Discription,Price,Duration,Roomid;
+public class livebatchModel {
+    String Title;
+    String Discription;
+    String Price;
+    String Duration;
+    String Roomid;
+    String Thumbnail;
+
+    public String getThumbnail() {
+        return Thumbnail;
+    }
+
+    public void setThumbnail(String thumbnail) {
+        Thumbnail = thumbnail;
+    }
 
     public String getTitle() {
         return Title;
@@ -48,7 +61,6 @@ public class livebatchModel          {
 //        this.price = price;
 //       //his.roomid = roomid;
 //    }
-
 
 
 }

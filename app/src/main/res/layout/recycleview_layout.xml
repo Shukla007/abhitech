@@ -3,12 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_margin="5dp">
+    android:layout_margin="4dp">
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="110dp"
-        app:cardCornerRadius="4dp">
+        app:cardCornerRadius="2dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -18,19 +18,20 @@
                 android:id="@+id/course_thumb"
                 android:layout_width="150dp"
                 android:layout_height="match_parent"
-                android:scaleType="centerCrop"
+                android:scaleType="fitXY"
                 android:src="@mipmap/ic_launcher" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-
+                android:layout_marginLeft="3dp"
                 android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/courseTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/allerta"
                     android:text="Chemistry class 10th chapter 2"
                     android:textColor="#111"
                     android:textSize="14dp"
@@ -40,19 +41,48 @@
                     android:id="@+id/batchDis"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:maxLines="3"
+                    android:fontFamily="@font/allerta"
+                    android:maxLines="2"
                     android:text="@string/dis"
                     android:textSize="12dp"
                     android:textStyle="italic" />
 
-                <TextView
-                    android:id="@+id/coursePrice"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="Rs 500 -/"
-                    android:textColor="#67EA2F"
-                    android:textStyle="bold" />
+              <LinearLayout
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content">
+
+                  <TextView
+                      android:id="@+id/rs"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_marginTop="8dp"
+                      android:layout_marginRight="3dp"
+                      android:fontFamily="@font/alegreya_sc"
+                      android:text="Rs"
+                      android:textColor="#111"
+                      android:textStyle="bold" />
+
+                  <TextView
+                      android:id="@+id/coursePrice"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_marginTop="8dp"
+                      android:layout_marginRight="3dp"
+                      android:fontFamily="@font/alegreya_sc"
+                      android:text="500"
+                      android:textColor="#111"
+                      android:textStyle="bold" />
+
+                  <TextView
+                      android:id="@+id/slash"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_marginTop="8dp"
+                      android:fontFamily="@font/alegreya_sc"
+                      android:text="-/"
+                      android:textColor="#111"
+                      android:textStyle="bold" />
+              </LinearLayout>
 
                 <TextView
                     android:id="@+id/courseDur"
@@ -62,13 +92,7 @@
                     android:text="6 Week"
                     android:textSize="12dp" />
 
-                <TextView
-                    android:id="@+id/courseIns"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:text="Manish kumar"
-                    android:textColor="#316FDA" />
+
 
 
             </LinearLayout>

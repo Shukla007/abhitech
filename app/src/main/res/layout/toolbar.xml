@@ -23,4 +23,12 @@
         android:textColor="#fff"
         android:textSize="20dp"
         android:textStyle="bold" />
+    <ImageView
+        android:id="@+id/fab_create"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_margin="10dp"
+        android:src="@drawable/add_box_24" />
+
 </androidx.appcompat.widget.Toolbar>

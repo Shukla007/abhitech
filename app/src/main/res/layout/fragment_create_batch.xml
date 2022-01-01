@@ -223,5 +223,6 @@
         android:drawableRight="@drawable/send_24"
         android:padding="8dp"
         android:text="Create Batch" />
+
 </RelativeLayout>
 </androidx.core.widget.NestedScrollView>

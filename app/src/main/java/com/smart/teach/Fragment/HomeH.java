@@ -65,7 +65,7 @@ public class HomeH extends Fragment implements View.OnClickListener {
     DatabaseReference reference;
     FirebaseDatabase db;
     recycleAdapter adapter;
-    ArrayList<livebatchModel>  list;
+    ArrayList<livebatchModel> list;
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -86,21 +86,21 @@ public class HomeH extends Fragment implements View.OnClickListener {
         recyclerView = view.findViewById(R.id.recycleview1);
         reference = FirebaseDatabase.getInstance().getReference("Live Batches");
         recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,true));
 
         list = new ArrayList<>();
-        adapter = new recycleAdapter(getContext(),list);
+        adapter = new recycleAdapter(getContext(), list);
         recyclerView.setAdapter(adapter);
 
         reference.addValueEventListener(new ValueEventListener() {
             @SuppressLint("NotifyDataSetChanged")
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                 for (DataSnapshot dataSnapshot : snapshot.getChildren()){
-                     livebatchModel batches = dataSnapshot.getValue(livebatchModel.class);
-                     list.add(batches);
-                 }
-                 adapter.notifyDataSetChanged();
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                    livebatchModel batches = dataSnapshot.getValue(livebatchModel.class);
+                    list.add(batches);
+                }
+                adapter.notifyDataSetChanged();
 
             }
 
@@ -185,7 +185,6 @@ public class HomeH extends Fragment implements View.OnClickListener {
 
         return view;
     }
-
 
 
     private void checkRole(String uid) {

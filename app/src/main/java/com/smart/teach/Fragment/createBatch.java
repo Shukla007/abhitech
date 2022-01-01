@@ -28,6 +28,7 @@ import androidx.annotation.Nullable;
 
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.model.Model;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -37,6 +38,7 @@ import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.smart.teach.R;
@@ -91,6 +93,7 @@ public class createBatch extends Fragment {
                 String Duration = duration.getSelectedItem().toString();
                 String Price = price.getText().toString();
                 String RoomId = roomid.getText().toString();
+                String thumbnail = user.getPhotoUrl().toString();
 
                 if (TextUtils.isEmpty(Title) || TextUtils.isEmpty(Discription) || TextUtils.isEmpty(Duration) || TextUtils.isEmpty(Price) || TextUtils.isEmpty(RoomId)) {
                     Toast.makeText(getActivity(), "Empty field", Toast.LENGTH_SHORT).show();
@@ -102,9 +105,11 @@ public class createBatch extends Fragment {
                     livebatch.put("Duration", Duration);
                     livebatch.put("Price", Price);
                     livebatch.put("RoomId", RoomId);
-                    // livebatch.put("Thunbnail", ));
+                    livebatch.put("Thumbnail",thumbnail);
+                    imageProgress.setVisibility(View.VISIBLE);
 
                     reference.push().setValue(livebatch);
+
                 }
 
 
@@ -252,5 +257,35 @@ public class createBatch extends Fragment {
                 });
 
     }
+//    private void uploadToFirebase(Uri uri){
+//
+//        final StorageReference fileRef = reference.child(System.currentTimeMillis() + "." + getFileExtension(uri));
+//        fileRef.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+//            @Override
+//            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+//                fileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+//                    @Override
+//                    public void onSuccess(Uri uri) {
+//
+//                        Model model = new Model(uri.toString());
+//                        String modelId = root.push().getKey();
+//                        mStorageRef.child(modelId).setValue(model);
+//                        Toast.makeText(getActivity(), "Uploaded Successfully", Toast.LENGTH_SHORT).show();
+//                    }
+//                });
+//            }
+//        }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+//            @Override
+//            public void onProgress(@NonNull UploadTask.TaskSnapshot snapshot) {
+//                progressBar.setVisibility(View.VISIBLE);
+//            }
+//        }).addOnFailureListener(new OnFailureListener() {
+//            @Override
+//            public void onFailure(@NonNull Exception e) {
+//                progressBar.setVisibility(View.INVISIBLE);
+//                Toast.makeText(getActivity(), "Uploading Failed !!", Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//    }
 
 }

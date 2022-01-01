@@ -13,10 +13,14 @@ import android.widget.TextView;
 
 import androidx.viewpager.widget.PagerAdapter;
 
+import com.bumptech.glide.Glide;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 import com.smart.teach.R;
-
+import com.smart.teach.model.livebatchModel;
 import java.util.List;
+
 
 public class ViewPagerAdapter extends PagerAdapter {
 
@@ -51,6 +55,8 @@ public class ViewPagerAdapter extends PagerAdapter {
         splashView = pagerLayoutInflater.inflate( R.layout.viewpage, container, false);
 
         ImageView splashImageView = (ImageView) splashView.findViewById(R.id.imagepage);
+        //Glide.with(ctx).load().into(splashImageView);
+
 splashImageView.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View view) {
@@ -64,6 +70,10 @@ splashImageView.setOnClickListener(new View.OnClickListener() {
 //              //  goLoginActivity();
 //            }
 //        });
+
+        StorageReference storage = FirebaseStorage.getInstance().getReference().child("CourseImages");
+
+
 
         splashImageView.setImageResource(list.get(position));
         container.addView(splashView);
