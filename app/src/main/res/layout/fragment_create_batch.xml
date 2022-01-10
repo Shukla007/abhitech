@@ -187,26 +187,17 @@
         android:orientation="vertical"
         android:padding="5dp">
 
-        <TextView
-            android:id="@+id/setId"
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/MeetUrl"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="5dp"
             android:layout_weight="1"
-            android:hint="Your Room Id "
-            android:textSize="15dp"
+            android:hint="Google-Meet Link"
 
             />
 
-        <Button
-            android:id="@+id/randdom_id"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:layout_weight="1"
-            android:text="genarate id"
 
-            />
 
     </LinearLayout>
 

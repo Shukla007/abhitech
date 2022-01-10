@@ -86,7 +86,7 @@ public class HomeH extends Fragment implements View.OnClickListener {
         recyclerView = view.findViewById(R.id.recycleview1);
         reference = FirebaseDatabase.getInstance().getReference("Live Batches");
         recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,true));
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,true));
 
         list = new ArrayList<>();
         adapter = new recycleAdapter(getContext(), list);

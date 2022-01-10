@@ -81,7 +81,7 @@ public class createBatch extends Fragment {
         EditText title = view.findViewById(R.id.Course_title);
         Spinner duration = view.findViewById(R.id.duration_spinner);
         EditText price = view.findViewById(R.id.price);
-        TextView roomid = view.findViewById(R.id.setId);
+        EditText Meeturl = view.findViewById(R.id.MeetUrl);
         Button create = view.findViewById(R.id.create_batch);
 
 
@@ -92,10 +92,10 @@ public class createBatch extends Fragment {
                 String Title = title.getText().toString();
                 String Duration = duration.getSelectedItem().toString();
                 String Price = price.getText().toString();
-                String RoomId = roomid.getText().toString();
+                String MeetingUrl = Meeturl.getText().toString();
                 String thumbnail = user.getPhotoUrl().toString();
 
-                if (TextUtils.isEmpty(Title) || TextUtils.isEmpty(Discription) || TextUtils.isEmpty(Duration) || TextUtils.isEmpty(Price) || TextUtils.isEmpty(RoomId)) {
+                if (TextUtils.isEmpty(Title) || TextUtils.isEmpty(Discription) || TextUtils.isEmpty(Duration) || TextUtils.isEmpty(Price) || TextUtils.isEmpty(MeetingUrl)) {
                     Toast.makeText(getActivity(), "Empty field", Toast.LENGTH_SHORT).show();
                 } else {
                     //Hashmap
@@ -104,7 +104,7 @@ public class createBatch extends Fragment {
                     livebatch.put("Discription", Discription);
                     livebatch.put("Duration", Duration);
                     livebatch.put("Price", Price);
-                    livebatch.put("RoomId", RoomId);
+                    livebatch.put("Meeting Url", MeetingUrl);
                     livebatch.put("Thumbnail",thumbnail);
                     imageProgress.setVisibility(View.VISIBLE);
 
@@ -117,19 +117,19 @@ public class createBatch extends Fragment {
 
         });
 
-        Button randomId = view.findViewById(R.id.randdom_id);
-        TextView setUId = view.findViewById(R.id.setId);
+//        Button randomId = view.findViewById(R.id.randdom_id);
+//        TextView setUId = view.findViewById(R.id.setId);
         if (user.getPhotoUrl() != null) {
             imageProgress.setVisibility(View.INVISIBLE);
             Glide.with(this).load(user.getPhotoUrl()).into(thumbnail);
         }
-        randomId.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String uid = UUID.randomUUID().toString();
-                setUId.setText(uid);
-            }
-        });
+//        randomId.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                String uid = UUID.randomUUID().toString();
+//                setUId.setText(uid);
+//            }
+//        });
 
 
         ImageButton addPic = view.findViewById(R.id.addPic);
