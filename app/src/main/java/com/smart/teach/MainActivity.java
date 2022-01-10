@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
     NavigationView navigationView;
     ImageView imageView, profileImage;
     TextView textView, userName, userEmail;
+
     FloatingActionButton fab;
     private GoogleApiClient googleApiClient;
 
@@ -62,7 +63,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
 
 
         FirebaseAuth auth = FirebaseAuth.getInstance();
@@ -90,8 +90,6 @@ public class MainActivity extends AppCompatActivity {
         userEmail = (TextView) findViewById(R.id.tv2);
         profileImage = (ImageView) findViewById(R.id.profileD);
         fab = findViewById(R.id.fab_btn);
-
-
 
 
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -139,7 +137,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
         //  User activity intents
 
         //  Bottom Navigation
@@ -179,7 +176,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
     private void loadFragment(Fragment fragment) {
         FragmentManager fm = getFragmentManager();
         FragmentTransaction fragmentTransaction = fm.beginTransaction();
@@ -193,7 +189,6 @@ public class MainActivity extends AppCompatActivity {
         super.onBackPressed();
         drawer.closeDrawer(GravityCompat.START);
     }
-
 
 
 }

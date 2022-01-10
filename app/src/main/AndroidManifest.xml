@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.smart.teach">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -11,7 +12,12 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Teach">
+        android:theme="@style/Theme.Teach"
+        tools:node="replace">
+        <activity
+            android:name=".Teacher"
+            android:exported="false" />
+
         <activity
             android:name=".splashscreen.splashActivity"
             android:exported="true">
@@ -20,11 +26,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-        <activity
-            android:name=".Teacher"
-            android:exported="false" />
         <activity
             android:name=".forgot"
             android:exported="false" />
@@ -36,19 +38,13 @@
             android:exported="false" />
         <activity
             android:name=".student_login"
-            android:exported="false">
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".joinUsers_Activity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true" />
-
-        <meta-data
-            android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
